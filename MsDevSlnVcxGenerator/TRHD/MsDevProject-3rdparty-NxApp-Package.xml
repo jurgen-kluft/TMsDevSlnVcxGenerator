@@ -1,0 +1,148 @@
+﻿<Project>
+  <PropertyGroup Label="Globals">
+    <NxAppVersion>3.3.91</NxAppVersion>
+  </PropertyGroup>
+
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='*'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(SolutionDir)cdc\3rdparty\</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+
+  <PropertyGroup Label="UserMacros">
+    <NxAppDir>$(SolutionDir)cdc\3rdParty\NxApp\</NxAppDir>
+    <NxAppSrcDir>$(NxAppDir)src\</NxAppSrcDir>
+    <NxAppIncDir>$(NxAppDir)inc\</NxAppIncDir>
+  </PropertyGroup>
+
+  <PropertyGroup Label="UserMacros">
+    <NvApiDir>$(NxAppDir)Src\nvapi\</NvApiDir>
+  </PropertyGroup>
+
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='*'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(NvApiDir)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+
+  <ItemDefinitionGroup Condition="*">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(NxAppIncDir)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+
+  <PropertyGroup Label="UserMacros">
+    <DirectXLibDir Condition="'$(Platform)'=='x64'">Lib\x64</DirectXLibDir>
+    <DirectXLibDir Condition="'$(Platform)'=='Win32'">Lib\x86</DirectXLibDir>
+  </PropertyGroup>
+
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='*'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(SolutionDir)cdc\3rdparty\DirectX12\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)cdc\3rdparty\DirectX_SDK_June_2010\include\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IntDir)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='*'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(SolutionDir)cdc\3rdparty\ChromaSDK\inc\</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+
+  <PropertyGroup Label="UserMacros">
+    <SteamworksDir Condition="'$(SteamworksDir)'==''">$(SolutionDir)cdc\3rdparty\steamworks_sdk_135a\sdk\</SteamworksDir>
+    <Steam_LanguageDepots>1</Steam_LanguageDepots>
+  </PropertyGroup>
+
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='*'">
+    <ClCompile>
+      <PreprocessorDefinitions>NX_USE_STEAM_LANGUAGE_DEPOT=$(Steam_LanguageDepots)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SteamworksDir)public\</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='*'">
+    <ClCompile>
+      <PreprocessorDefinitions>NX_API_DYNAMIC</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NX_USE_TOBII=0</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NX_USE_VR=0</PreprocessorDefinitions>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='{QA,Final}|*'">
+    <ClCompile>
+      <PreprocessorDefinitions>NX_GOLD_MASTER=1</PreprocessorDefinitions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+
+  <ItemGroup Label="Source">
+    <ClInclude Include="$(NxAppDir)Inc\NxActions.h" />
+    <ClInclude Include="$(NxAppDir)Inc\NxADL.h" />
+    <ClInclude Include="$(NxAppDir)Inc\NxAllocator.h" />
+    <ClInclude Include="$(NxAppDir)Inc\NxApi.h" />
+    <ClInclude Include="$(NxAppDir)Inc\NxApp.h" />
+    <ClInclude Include="$(NxAppDir)Inc\NxAssert.h" />
+    <ClInclude Include="$(NxAppDir)Inc\NxBenchmark.h" />
+    <ClInclude Include="$(NxAppDir)Inc\NxConfig.h" />
+    <ClInclude Include="$(NxAppDir)Inc\NxD3D.h" />
+    <ClInclude Include="$(NxAppDir)Inc\NxDebugKeys.h" />
+    <ClInclude Include="$(NxAppDir)Inc\NxDXGI.h" />
+    <ClInclude Include="$(NxAppDir)Inc\NxGameState.h" />
+    <ClInclude Include="$(NxAppDir)Inc\NxInput.h" />
+    <ClInclude Include="$(NxAppDir)Inc\NxLauncher.h" />
+    <ClInclude Include="$(NxAppDir)Inc\NxLocalization.h" />
+    <ClInclude Include="$(NxAppDir)Inc\NxLog.h" />
+    <ClInclude Include="$(NxAppDir)Inc\NxNvidia.h" />
+    <ClInclude Include="$(NxAppDir)Inc\NxRazerChroma.h" />
+    <ClInclude Include="$(NxAppDir)Inc\NxResourceLoader.h" />
+    <ClInclude Include="$(NxAppDir)Inc\NxRestrictedUAP.h" />
+    <ClInclude Include="$(NxAppDir)Inc\NxScaleform.h" />
+    <ClInclude Include="$(NxAppDir)Inc\NxSettings.h" />
+    <ClInclude Include="$(NxAppDir)Inc\NxSteam.h" />
+    <ClInclude Include="$(NxAppDir)Inc\NxTobii.h" />
+
+
+    <ClInclude Include="$(NxAppDir)Inc\NxTobiiTypes.h" />
+    <ClInclude Include="$(NxAppDir)Inc\NxUAP.h" />
+    <ClInclude Include="$(NxAppDir)Inc\NxTypes.h" />
+    <ClInclude Include="$(NxAppDir)Inc\NxVR.h" />
+
+    <ClInclude Include="$(NxAppDir)Inc\PCConfigDialog.h" />
+    <ClInclude Include="$(NxAppDir)Res\resource_config.h" />
+    <ClInclude Include="$(NxAppDir)Res\resource_fail_abort.h" />
+    <ClInclude Include="$(NxAppDir)Src\adl\adl_defines.h" />
+    <ClInclude Include="$(NxAppDir)Src\adl\adl_sdk.h" />
+    <ClInclude Include="$(NxAppDir)Src\adl\adl_structures.h" />
+    <ClInclude Include="$(NxAppDir)Src\adl\amd_ags.h" />
+    <ClInclude Include="$(NxAppDir)Src\adl\ati_ags.h" />
+    <ClInclude Include="$(NxAppDir)Src\adl\qbs\AmdDxExt.h" />
+    <ClInclude Include="$(NxAppDir)Src\adl\qbs\AmdDxExtApi.h" />
+    <ClInclude Include="$(NxAppDir)Src\adl\qbs\AmdDxExtIface.h" />
+    <ClInclude Include="$(NxAppDir)Src\adl\qbs\AmdDxExtQbStereoApi.h" />
+    <ClInclude Include="$(NxAppDir)Src\nvapi\nvapi.h" />
+    <ClInclude Include="$(NxAppDir)Src\NxCallstack.h" />
+    <ClInclude Include="$(NxAppDir)Inc\NxExceptions.h" />
+    <ClInclude Include="$(NxAppDir)Src\NxFailDialog.h" />
+    <ClInclude Include="$(NxAppDir)Src\NxGameWindow.h" />
+    <ClInclude Include="$(NxAppDir)Src\NxMain.h" />
+    <ClInclude Include="$(NxAppDir)Inc\NxMiniDump.h" />
+    <ClInclude Include="$(NxAppDir)Src\NxMonitor.h" />
+    <ClInclude Include="$(NxAppDir)Src\NxSwapChain.h" />
+
+    <ClInclude Include="$(NxAppDir)Src\NxUtils.h" />
+
+    <ClInclude Include="$(NxAppDir)Src\NxInput\NxDevice.h" />
+    <ClInclude Include="$(NxAppDir)Src\NxInput\NxGamepad.h" />
+    <ClInclude Include="$(NxAppDir)Src\NxInput\NxGamepadSCE.h" />
+    <ClInclude Include="$(NxAppDir)Src\NxInput\NxGamepadSteam.h" />
+    <ClInclude Include="$(NxAppDir)Src\NxInput\NxGamepadXInput.h" />
+    <ClInclude Include="$(NxAppDir)Src\NxInput\NxHumanInterfaceDevice.h" />
+    <ClInclude Include="$(NxAppDir)Src\NxInput\NxMouseDevice.h" />
+    <ClInclude Include="$(NxAppDir)Src\NxInput\NxJoystickDevice.h" />
+    <ClInclude Include="$(NxAppDir)Src\NxInput\NxKeyboardDevice.h" />
+    <ClInclude Include="$(NxAppDir)Src\NxInput\NxMouseLinearSmoothHelper.h" />
+
+  </ItemGroup>
+</Project>

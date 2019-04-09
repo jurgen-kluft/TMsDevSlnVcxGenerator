@@ -1,0 +1,48 @@
+﻿<Project>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="${CONFIGURATION}|${PLATFORM}">
+      <Configuration>${CONFIGURATION}</Configuration>
+      <Platform>${PLATFORM}</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>${PROJECT_GUID}</ProjectGuid>
+    <RootNamespace>trae</RootNamespace>
+    <TargetMode Condition="'$(Configuration)'=='Debug'">D</TargetMode>
+    <TargetMode Condition="'$(Configuration)'=='Dev'">E</TargetMode>
+    <TargetMode Condition="'$(Configuration)'=='Release'">R</TargetMode>
+    <TargetMode Condition="'$(Configuration)'=='Profile'">P</TargetMode>
+    <TargetMode Condition="'$(Configuration)'=='QA'">Q</TargetMode>
+    <TargetMode Condition="'$(Configuration)'=='Final'">F</TargetMode>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='${CONFIGURATION}|${PLATFORM}'" Label="Configuration">
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros">
+  </PropertyGroup>
+  <PropertyGroup Label="General">
+    <OutDir>$(SolutionDir)GeneratedData\$(ProjectName)\Lib\$(Platform)_$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)GeneratedData\$(ProjectName)\Int\$(Platform)_$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Label="SDK">
+    <TargetName>$(ProjectName)-$(TargetMode)</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='${CONFIGURATION}|${PLATFORM}'">
+    <ClCompile>
+      <ObjectFileName>$(IntDir)%(RelativeDir)</ObjectFileName>
+    </ClCompile>
+    <Link />
+    <Lib />
+  </ItemDefinitionGroup>
+  <ItemGroup Label="Source">
+  </ItemGroup>
+  <ItemGroup Label="ProjectReferences">
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

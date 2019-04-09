@@ -1,0 +1,11 @@
+﻿<Project>
+  <ItemDefinitionGroup Condition="*">
+    <ClCompile>
+      <AdditionalIncludeDirectories>GeneratedData\NxShaders\$(Platform)Release\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>GeneratedData\NxShaders\$(Platform)Release\cdc\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>GeneratedData\NxShaders\$(Platform)Release\cdc\runtime\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>GeneratedData\NxShaders\$(Platform)Release\code\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>GeneratedData\NxShaders\$(Platform)Release\code\game\</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+</Project>

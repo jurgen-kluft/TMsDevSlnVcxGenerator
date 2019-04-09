@@ -1,0 +1,83 @@
+﻿<Project>
+  <PropertyGroup Label="Globals">
+    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'==*" Label="Configuration">
+    <PlatformToolset>v141</PlatformToolset>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <EmbedManifest>false</EmbedManifest>
+    <GenerateManifest>false</GenerateManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='*|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(ProjectDir)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)dtp\output\</AdditionalIncludeDirectories>
+      <AdditionalLibraryDirectories>$(ProjectDir)3rdparty\fmod_cd\</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(ProjectDir)3rdparty\DX9SDK\lib\x64\</AdditionalLibraryDirectories>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+
+      <PreprocessorDefinitions>WIN32</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_WINDOWS</PreprocessorDefinitions>
+      <PreprocessorDefinitions>CDC_WINDOWS</PreprocessorDefinitions>
+      <PreprocessorDefinitions>G2_D3D</PreprocessorDefinitions>
+
+      <CompileAs>CompileAsCpp</CompileAs>
+
+      <WarningLevel>Level3</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <DisableSpecificWarnings>4996</DisableSpecificWarnings>
+      <DisableSpecificWarnings>4430</DisableSpecificWarnings>
+      <DisableSpecificWarnings>4482</DisableSpecificWarnings>
+      <DisableSpecificWarnings>4237</DisableSpecificWarnings>
+      <DisableSpecificWarnings>4316</DisableSpecificWarnings>
+      <DisableSpecificWarnings>4100</DisableSpecificWarnings>
+      <DisableSpecificWarnings>4065</DisableSpecificWarnings>
+      <DisableSpecificWarnings>4200</DisableSpecificWarnings>
+      <DisableSpecificWarnings>4244</DisableSpecificWarnings>
+      <DisableSpecificWarnings>4800</DisableSpecificWarnings>
+      <DisableSpecificWarnings>4886</DisableSpecificWarnings>
+      <DisableSpecificWarnings>4091</DisableSpecificWarnings>
+      <DisableSpecificWarnings>4716</DisableSpecificWarnings>
+      <DisableSpecificWarnings>4018</DisableSpecificWarnings>
+      <DisableSpecificWarnings>%(DisableSpecificWarnings)</DisableSpecificWarnings>
+
+      <Optimization>Disabled</Optimization>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <SupportJustMyCode>false</SupportJustMyCode>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </ClCompile>
+    <Link>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+      <AdditionalDependencies>dbghelp.lib</AdditionalDependencies>
+      <AdditionalDependencies>ws2_32.li</AdditionalDependencies>
+      <AdditionalDependencies>d3dx9.lib</AdditionalDependencies>
+      <AdditionalDependencies>dxguid.lib</AdditionalDependencies>
+      <AdditionalDependencies>dinput.lib</AdditionalDependencies>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreSpecificDefaultLibraries>LIBCMT</IgnoreSpecificDefaultLibraries>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>true</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='{Dev,Release,Profile}|x64'">
+    <ClCompile>
+      <Optimization>MinSpace</Optimization>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='{QA,Final}|x64'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+    </ClCompile>
+  </ItemDefinitionGroup>
+</Project>

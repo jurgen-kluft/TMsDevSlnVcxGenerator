@@ -1,0 +1,50 @@
+﻿<Project>
+  <PropertyGroup Label="Globals">
+    <TargetMode Condition="'$(Configuration)'=='Debug'">D</TargetMode>
+    <TargetMode Condition="'$(Configuration)'=='Dev'">E</TargetMode>
+    <TargetMode Condition="'$(Configuration)'=='Release'">R</TargetMode>
+    <TargetMode Condition="'$(Configuration)'=='Profile'">P</TargetMode>
+    <TargetMode Condition="'$(Configuration)'=='QA'">Q</TargetMode>
+    <TargetMode Condition="'$(Configuration)'=='Final'">F</TargetMode>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='*|x64'" Label="Configuration">
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CharacterSet>NotSet</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <UseDebugLibraries>true</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='{QA,Final}|x64'" Label="Configuration">
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='*|Durango'" Label="Configuration">
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CharacterSet>NotSet</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Durango'" Label="Configuration">
+    <UseDebugLibraries>true</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='{QA,Final}|Durango'" Label="Configuration">
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='*|ORBIS'" Label="Configuration">
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CharacterSet>NotSet</CharacterSet>
+    <PlatformToolset>Clang</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ORBIS'" Label="Configuration">
+    <UseDebugLibraries>true</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='{QA,Final}|ORBIS'" Label="Configuration">
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+
+</Project>

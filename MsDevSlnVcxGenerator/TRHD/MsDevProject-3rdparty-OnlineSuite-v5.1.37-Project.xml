@@ -1,0 +1,42 @@
+﻿<Project>
+
+  <PropertyGroup Label="General">
+    <OutDir>GeneratedData\OnlineSuite\$(Platform)$(Configuration)\</OutDir>
+    <IntDir>GeneratedData\OnlineSuite\$(Platform)$(Configuration).temp\</IntDir>
+  </PropertyGroup>
+
+  <ItemGroup Label="Source">
+    <CustomBuild Include="cdc\runtime\OnlineSuite\GenerateOTCFG.otcfg">
+      <Outputs Condition="'$(Configuration)|$(Platform)'!='None|None'">$(SolutionDir)GeneratedData\OnlineSuite\$(Platform)$(Configuration)\cdc\runtime\otcfg\otcfg.h</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'!='None|None'">Generate OTCFG.h for Online Suite</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'!='None|None'">call $(SolutionDir)cdc\3rdParty\OnlineSuite\v5.1.37\otcfg\otcfg.bat Nothing $(Platform)$(Configuration) "$(Platform)" $(SolutionDir)GeneratedData\OnlineSuite\$(Platform)$(Configuration)\cdc\runtime\otcfg\</Command>
+    </CustomBuild>
+
+    <ClInclude Include="SCAN->$(SolutionDir)cdc\3rdParty\OnlineSuite\v5.1.37\otcfg\**\*.h">
+    </ClInclude>
+    <ClCompile Include="SCAN->$(SolutionDir)cdc\3rdParty\OnlineSuite\v5.1.37\otcfg\**\*.cpp">
+      <Warnings Condition="'$(Platform)'=='ORBIS'">WarningsOff</Warnings>
+      <WarningLevel Condition="'$(Platform)'=='x64'">TurnOffAllWarnings</WarningLevel>
+      <AdditionalOptions Condition="'$(Platform)'=='x64'"> %(AdditionalOptions)</AdditionalOptions>
+      <WarningLevel Condition="'$(Platform)'=='Durango'">TurnOffAllWarnings</WarningLevel>
+      <AdditionalOptions Condition="'$(Platform)'=='Durango'"> %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+
+    <ClCompile Remove="$(SolutionDir)cdc\3rdParty\OnlineSuite\v5.1.37\otcfg\**\gameinterfaceandroid.cpp" />
+    <ClCompile Remove="$(SolutionDir)cdc\3rdParty\OnlineSuite\v5.1.37\otcfg\**\gameinterfaceios.cpp" />
+    <ClCompile Remove="$(SolutionDir)cdc\3rdParty\OnlineSuite\v5.1.37\otcfg\**\gameinterfacelinux.cpp" />
+    <ClCompile Remove="$(SolutionDir)cdc\3rdParty\OnlineSuite\v5.1.37\otcfg\**\gameinterfaceonlive.cpp" />
+    <ClCompile Remove="$(SolutionDir)cdc\3rdParty\OnlineSuite\v5.1.37\otcfg\**\gameinterfaceosx.cpp" />
+    <ClCompile Remove="$(SolutionDir)cdc\3rdParty\OnlineSuite\v5.1.37\otcfg\**\gameinterfaceps3.cpp" />
+    <ClCompile Remove="$(SolutionDir)cdc\3rdParty\OnlineSuite\v5.1.37\otcfg\**\gameinterfacexbox360.cpp" />
+  </ItemGroup>
+
+  <Include>MsDevProject-3rdparty-OnlineSuite-v5.1.37-Package.xml</Include>
+
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='*|Durango'">
+    <ClCompile>
+      <CompileAsWinRT>true</CompileAsWinRT>
+    </ClCompile>
+  </ItemDefinitionGroup>
+
+</Project>

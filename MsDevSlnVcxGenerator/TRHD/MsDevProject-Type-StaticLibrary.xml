@@ -1,0 +1,17 @@
+﻿<Project>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='*|{x64,Durango}'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <TargetExt>.lib</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='*|ORBIS'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <TargetExt>.a</TargetExt>
+  </PropertyGroup>
+
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='*|Durango'">
+    <ClCompile>
+      <PreprocessorDefinitions>_LIB</PreprocessorDefinitions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+
+</Project>

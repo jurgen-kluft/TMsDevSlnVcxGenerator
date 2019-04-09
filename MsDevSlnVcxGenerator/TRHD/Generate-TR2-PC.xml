@@ -1,0 +1,102 @@
+﻿<Solution Name="TR2" Path="TR2-PC.sln">
+
+  <Platform>x64</Platform>
+
+  <Configuration>Debug</Configuration>
+  <Configuration>Dev</Configuration>
+  <Configuration>Release</Configuration>
+  <Configuration>Profile</Configuration>
+  <Configuration>QA</Configuration>
+  <Configuration>Final</Configuration>
+
+  <Project Name="NxApp" Path="TRHD-PC-NxApp.vcxproj">
+    <Settings>MsDevProject-Merge-Settings.xml</Settings>
+    <Reference>MsDevProject-Reference.xml</Reference>
+    <Package>MsDevProject-3rdparty-NxApp-Package.xml</Package>
+  </Project>
+
+  <Project Name="Shaders" Path="TRHD-PC-Shaders.vcxproj">
+    <Configuration>Debug=Release</Configuration>
+    <Configuration>Dev=Release</Configuration>
+    <Configuration>Release=Release</Configuration>
+    <Configuration>Profile=Release</Configuration>
+    <Configuration>QA=Release</Configuration>
+    <Configuration>Final=Release</Configuration>
+    <Settings>MsDevProject-Merge-Settings.xml</Settings>
+    <Reference>MsDevProject-Reference.xml</Reference>
+    <Package>MsDevProject-TR2-NXShaders-Package.xml</Package>
+  </Project>
+
+  <Project Name="Talea" Path="TRHD-PC-Talea.vcxproj">
+    <Settings>MsDevProject-Merge-Settings.xml</Settings>
+    <Reference>MsDevProject-Reference.xml</Reference>
+    <Package>MsDevProject-3rdparty-Talea-Package.xml</Package>
+    <Package>MsDevProject-TR2-CDC-Package.xml</Package>
+  </Project>
+
+  <Project Name="OnlineSuite" Path="TRHD-PC-OnlineSuite.vcxproj">
+    <Settings>MsDevProject-Merge-Settings.xml</Settings>
+    <Reference>MsDevProject-Reference.xml</Reference>
+    <Package>MsDevProject-3rdparty-OnlineSuite-v5.1.34-Package.xml</Package>
+    <Package>MsDevProject-3rdparty-Steam-Package.xml</Package>
+  </Project>
+
+  <Project Name="CDC" Path="TRHD-PC-CDC.vcxproj">
+    <Settings>MsDevProject-Merge-Settings.xml</Settings>
+    <Reference>MsDevProject-Reference.xml</Reference>
+    <Package>MsDevProject-TR2-CDC-Package.xml</Package>
+    <Package>MsDevProject-3rdparty-ATIAGS-Package.xml</Package>
+    <Package>MsDevProject-3rdparty-Bink-Package.xml</Package>
+    <Package>MsDevProject-3rdparty-FMOD-Package.xml</Package>
+    <Package>MsDevProject-3rdparty-NvApi-Package.xml</Package>
+    <Package>MsDevProject-3rdparty-Raknet-Package.xml</Package>
+    <Package>MsDevProject-3rdparty-PureHair-Package.xml</Package>
+    <Package>MsDevProject-3rdparty-Scaleform-Package.xml</Package>
+    <Package>MsDevProject-3rdparty-VXGI-Package.xml</Package>
+    <Dependency>DTP</Dependency>
+    <Dependency>Script</Dependency>
+    <Dependency>Shaders</Dependency>
+    <Dependency>OnlineSuite</Dependency>
+  </Project>
+
+  <Project Name="DTP" Path="TRHD-PC-DTP.vcxproj">
+    <Configuration>Debug=Release</Configuration>
+    <Configuration>Dev=Release</Configuration>
+    <Configuration>Release=Release</Configuration>
+    <Configuration>Profile=Release</Configuration>
+    <Configuration>QA=Release</Configuration>
+    <Configuration>Final=Release</Configuration>
+    <Settings>MsDevProject-Merge-Settings.xml</Settings>
+    <Reference>MsDevProject-Reference.xml</Reference>
+    <Package>MsDevProject-TR2-DTP-Package.xml</Package>
+  </Project>
+
+  <Project Name="Script" Path="TRHD-PC-Script.vcxproj">
+    <Settings>MsDevProject-Merge-Settings.xml</Settings>
+    <Reference>MsDevProject-Reference.xml</Reference>
+    <Package>MsDevProject-TR2-Script-Package.xml</Package>
+    <Package>MsDevProject-TR2-CDC-Package.xml</Package>
+    <Dependency>DTP</Dependency>
+    <Dependency>OnlineSuite</Dependency>
+  </Project>
+
+  <Project Name="TR2" Path="TR2-PC.vcxproj">
+    <Settings>MsDevProject-Merge-Settings.xml</Settings>
+    <Load>MsDevProject-Default.xml</Load>
+    <Merge>MsDevProject-Type-Application.xml</Merge>
+    <Merge>MsDevProject-ProjectConfigs.xml</Merge>
+    <Merge>MsDevProject-CompileSettings.xml</Merge>
+    <Merge>MsDevProject-LinkSettings.xml</Merge>
+    <Merge>MsDevProject-SDK-x64.xml</Merge>
+    <Merge>MsDevProject-TR2-Game.xml</Merge>
+    <Merge>MsDevProject-3rdparty-Cerberus-Package.xml</Merge>
+    <Dependency>CDC</Dependency>
+    <Dependency>OnlineSuite</Dependency>
+    <Dependency>Talea</Dependency>
+    <Dependency>DTP</Dependency>
+    <Dependency>Shaders</Dependency>
+    <Dependency>Script</Dependency>
+    <Dependency>NxApp</Dependency>
+  </Project>
+
+</Solution>

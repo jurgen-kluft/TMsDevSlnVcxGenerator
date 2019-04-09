@@ -1,0 +1,87 @@
+﻿<Project>
+  <PropertyGroup Label="Globals">
+    <OnlineSuiteVersion>v5.1.37</OnlineSuiteVersion>
+  </PropertyGroup>
+
+  <ItemDefinitionGroup Condition="*">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(SolutionDir)cdc\3rdParty\OnlineSuite\v5.1.37\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)cdc\3rdParty\OnlineSuite\v5.1.37\inc\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)GeneratedData\OnlineSuite\$(Platform)$(Configuration)\cdc\runtime\</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='*|x64'">
+    <Link>
+      <AdditionalLibraryDirectories>$(SolutionDir)cdc\3rdParty\OnlineSuite\v5.1.37\lib\x64\2015\dynamic\</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Link>
+      <AdditionalDependencies>otmetrics_debug.lib</AdditionalDependencies>
+      <AdditionalDependencies>otstd_debug.lib</AdditionalDependencies>
+      <AdditionalDependencies>otnet_debug.lib</AdditionalDependencies>
+      <AdditionalDependencies>psock_debug.lib</AdditionalDependencies>
+      <AdditionalDependencies>otpsp_debug.lib</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='{Dev,Release,Profile,QA,Final}|x64'">
+    <Link>
+      <AdditionalDependencies>otmetrics.lib</AdditionalDependencies>
+      <AdditionalDependencies>otstd.lib</AdditionalDependencies>
+      <AdditionalDependencies>otnet.lib</AdditionalDependencies>
+      <AdditionalDependencies>psock.lib</AdditionalDependencies>
+      <AdditionalDependencies>otpsp.lib</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+
+
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='*|Durango'">
+    <Link>
+      <AdditionalLibraryDirectories>$(SolutionDir)cdc\3rdParty\OnlineSuite\v5.1.37\lib\durango\2017\dynamic\</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Durango'">
+    <Link>
+      <AdditionalDependencies>otmetrics_debug.lib</AdditionalDependencies>
+      <AdditionalDependencies>otstd_debug.lib</AdditionalDependencies>
+      <AdditionalDependencies>otnet_debug.lib</AdditionalDependencies>
+      <AdditionalDependencies>psock_debug.lib</AdditionalDependencies>
+      <AdditionalDependencies>otpsp_debug.lib</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='{Dev,Release,Profile,QA,Final}|Durango'">
+    <Link>
+      <AdditionalDependencies>otmetrics.lib</AdditionalDependencies>
+      <AdditionalDependencies>otstd.lib</AdditionalDependencies>
+      <AdditionalDependencies>otnet.lib</AdditionalDependencies>
+      <AdditionalDependencies>psock.lib</AdditionalDependencies>
+      <AdditionalDependencies>otpsp.lib</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='*|ORBIS'">
+    <Link>
+      <AdditionalLibraryDirectories>$(SolutionDir)cdc\3rdParty\OnlineSuite\v5.1.37\lib\orbis\</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ORBIS'">
+    <Link>
+      <AdditionalDependencies>-lotmetrics_debug</AdditionalDependencies>
+      <AdditionalDependencies>-lotstd_debug</AdditionalDependencies>
+      <AdditionalDependencies>-lotnet_debug</AdditionalDependencies>
+      <AdditionalDependencies>-lpsock_debug</AdditionalDependencies>
+      <AdditionalDependencies>-lotpsp_debug</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='{Dev,Release,Profile,QA,Final}|ORBIS'">
+    <Link>
+      <AdditionalDependencies>-lotmetrics</AdditionalDependencies>
+      <AdditionalDependencies>-lotstd</AdditionalDependencies>
+      <AdditionalDependencies>-lotnet</AdditionalDependencies>
+      <AdditionalDependencies>-lpsock</AdditionalDependencies>
+      <AdditionalDependencies>-lotpsp</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+
+</Project>

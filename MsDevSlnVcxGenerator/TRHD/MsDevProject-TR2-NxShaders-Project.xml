@@ -1,0 +1,533 @@
+﻿<Project>
+  <UsingTask TaskName="NxCompiler.Compiler" AssemblyFile="NxCompiler.dll"/>
+  <Target Name="NXShader" BeforeTargets="Lib;Link">
+    <Compiler Module="NxShader" Root="$(SolutionDir)" IntDir="$(IntDir)" OutDir="$(OutDir)" Platform="$(Platform)" Config="$(Configuration)" Sources="@(NXShader)" Options="%(NXShader.Options)" IncludePaths="$(SolutionDir)cdc\runtime\;$(SolutionDir)cdc\runtime\cdcrender\common\shaders\" />
+  </Target>
+  <PropertyGroup Label="General">
+    <DisableFastUpToDateCheck>true</DisableFastUpToDateCheck>
+    <OutDir>GeneratedData\NxShaders\$(Platform)$(Configuration)\</OutDir>
+    <IntDir>GeneratedData\NxShaders\$(Platform)$(Configuration).temp\</IntDir>
+  </PropertyGroup>
+  <ItemGroup Label="Source">
+    <None Include="cdc\runtime\cdcRender\Common\Shaders\cdcCommonCS.inc" />
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\Basic2dPS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\Basic2dVS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\BinkPS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\BinkVS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\BlendShapesCS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\BlurCS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\BokehCS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\BokehPS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\CalculateCascadeBoundsCS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\CalculateCascadesCS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\CalculateMinMaxDepthCS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\CalculateShadowMatricesCS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\CheckerBoardUtilCS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\ClearPreviousSDSMRegionVS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\ClearSDSMDataCS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\ColorDepthDownsamplePS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\ColorVS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\CopySDSMDataCS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\CullingCS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\DebugPS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\DecompressDepth.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\DefaultPC.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\DepthHistogram.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\DirectionalShadowsPS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\DitheredBlitPS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\DownsampleCS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\DX11CopySurfacePS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\DX11CopySurfaceVS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\DX11ErrorMatPS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\DX11ErrorMatVS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\DX11HistogramDebug.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\DX11SimplePrimPS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\DX11SimplePrimVS2D.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\DX11SimplePrimVS3D.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\DX11YUV2DecodePS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\ErrorPS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\ErrorVS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\FogPS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\FullscreenFXPS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\FXAAPS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\GenPostCompGBufPS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\GrassBillboardPS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\GrassBillboardVS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\GrassCompPostPS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\GrassCS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\GrassGS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\GrassNormalPS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\GrassPS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\GrassVS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\HairABufferDepthPrepass.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\HairABufferDepthPrepassNoAA.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\HairABufferFillInstancingSlaveVS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\HairABufferFillInstancingVS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\HairABufferFillPS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\HairABufferFillPSNoAA.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\HairDepthWritePS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\HairFullScreenVS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\HairKBufferSortAndDrawPS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\HairOpaquePS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\HairResolveCS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\HairShadowSlaveVS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\HairShadowVS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\HairSimAABBMapReduceCS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\HairSimACS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\HairSimBCS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\HairSimCalcSkinningMatricesCS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\HairSimDCS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\HairSimECS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\HairSimSanityCheckCS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\HairSimSolveConstraintsCS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\HairTranslucencyAccumulation.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\HairUpdateAmbientCS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\HairUpdateStaticInterpolationCS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\HBAO_blurCS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\HBAO_CS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\HBAO_PSVerCS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\HBAO.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\HDAO.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\HDAODownsample.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\ImmediatePC.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\LightDustersCS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\MeshDensityGS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\MultisamplingCoverageMaskPS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\PassThroughVS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\Position3DVS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\PositionPassthroughVS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\PostprocessPS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\ReprojectDepthBufferPS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\SAO_AO.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\SAO_blur.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\SAO_ebonyBlurCS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\SAO_minify.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\ShadowMapPS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\silhouettestencil.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\SimplePrimPSDepthWrite.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\SimplePrimPSDepthWriteTransform.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\SMAAPS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\SMAAVS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\TiledLightingBoundsCS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\TiledLightingCS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\TiledLightingPS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\UpsamplePS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\UtilCS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\UtilPS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\UtilVS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\ValidateTextureCS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\VelocityMapPS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\VelocityMapVS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\VolumetricLightCS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\volumetriclightscattering.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\VolumetricLightUtilsCS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\volumetriclightvolumePS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\volumetriclightvolumeVS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\WeightedBlurCS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\WriteInterleavedPS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="code\game\render\Shaders\Common\BasicVS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="code\game\render\Shaders\Common\blackhole\blackhole_cs.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="code\game\render\Shaders\Common\bloomscatter\AdaptiveLuminanceCalcCS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="code\game\render\Shaders\Common\bloomscatter\adaptluminance.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="code\game\render\Shaders\Common\bloomscatter\autotonemap.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="code\game\render\Shaders\Common\bloomscatter\combine.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="code\game\render\Shaders\Common\bloomscatter\conv_sep9.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="code\game\render\Shaders\Common\bloomscatter\downsampleluminance.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="code\game\render\Shaders\Common\bloomscatter\downsize.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="code\game\render\Shaders\Common\bloomscatter\downsize2.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="code\game\render\Shaders\Common\bloomscatter\GaussianBlurCS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="code\game\render\Shaders\Common\bloomscatter\HemiHDRCS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="code\game\render\Shaders\Common\bloomscatter\lightscatter.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="code\game\render\Shaders\Common\bloomscatter\luminance.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="code\game\render\Shaders\Common\bloomscatter\TonemapPS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="code\game\render\Shaders\Common\bloomscatter\upscale.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="code\game\render\Shaders\Common\cubeambient\cubeambient.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="code\game\render\Shaders\Common\cubeambient\probe_spheresPS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="code\game\render\Shaders\Common\cubeambient\probe_spheresVS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="code\game\render\Shaders\Common\cubereflection\cubereflection.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="code\game\render\Shaders\Common\cubereflection\CubeReflectionCS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="code\game\render\Shaders\Common\cubereflection\reflupsample_cs.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="code\game\render\Shaders\Common\cubereflection\reflupsample.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="code\game\render\Shaders\Common\DeepPrintsPS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="code\game\render\Shaders\Common\DefAmbientSSAOLightPS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="code\game\render\Shaders\Common\DefDarkBufferSSAO.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="code\game\render\Shaders\Common\DefDirLightPS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="code\game\render\Shaders\Common\DefPointLightPS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="code\game\render\Shaders\Common\fogrender\fogapplication.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="code\game\render\Shaders\Common\fx\LensFlareOccluder.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="code\game\render\Shaders\Common\GenericVS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="code\game\render\Shaders\Common\lenseffect\bluranddof.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="code\game\render\Shaders\Common\lenseffect\blurprep\focaldownsample.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="code\game\render\Shaders\Common\lenseffect\blurprep\focusblur_cs.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="code\game\render\Shaders\Common\lenseffect\blurprep\motionblurdownsample.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="code\game\render\Shaders\Common\lenseffect\blurprep\pinwheelblur.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="code\game\render\Shaders\Common\lenseffect\colorcorrection.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="code\game\render\Shaders\Common\lenseffect\combinelut.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="code\game\render\Shaders\Common\lenseffect\intensitysaturation.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="code\game\render\Shaders\Common\lenseffect\motionblur.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="code\game\render\Shaders\Common\lenseffect\motionblurbilateralupsample.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="code\game\render\Shaders\Common\lenseffect\motionblurneighbormax.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="code\game\render\Shaders\Common\lenseffect\screenspaceaa.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="code\game\render\Shaders\Common\lenseffect\staticvelocitymap.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="code\game\render\Shaders\Common\lenseffect\VelocityMapCS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="code\game\render\Shaders\Common\offscreen\partupscale.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="code\game\render\Shaders\Common\scrman_debug\scrman_debug.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="code\game\render\Shaders\Common\ShallowPrintsPS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="code\game\render\Shaders\Common\snow\SnowDeformationConstantFillCS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="code\game\render\Shaders\Common\snow\SnowDeformationCS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="code\game\render\Shaders\Common\snow\SnowDeformationEraseEdgesCS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="code\game\render\Shaders\Common\ssao\AoBlurUpsampleCS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="code\game\render\Shaders\Common\ssao\AoPrepareDepthBuffers1CS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="code\game\render\Shaders\Common\ssao\AoPrepareDepthBuffers2CS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="code\game\render\Shaders\Common\ssao\AoRenderCS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="code\game\render\Shaders\Common\SSSRenderPS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="code\game\render\Shaders\Common\SSSRenderVS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="code\game\render\Shaders\Common\SSSTransmitPS.nxshader">
+      <Options>/HASH</Options>
+    </NXShader>
+  </ItemGroup>
+</Project>

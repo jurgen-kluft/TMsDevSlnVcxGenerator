@@ -1,0 +1,52 @@
+﻿<Solution Name="TRAE" Path="TRAE.sln">
+
+  <Platform>ORBIS</Platform>
+  <Platform>Durango</Platform>
+  <Platform>x64</Platform>
+
+  <Configuration>Debug</Configuration>
+  <Configuration>Dev</Configuration>
+  <Configuration>Release</Configuration>
+  <Configuration>Profile</Configuration>
+  <Configuration>QA</Configuration>
+  <Configuration>Final</Configuration>
+
+  <Project Name="TRAE-Orbis" Path="TRAE-Orbis.vcxproj">
+    <Platform>ORBIS</Platform>
+    <Settings>MsDevProject-Merge-Settings.xml</Settings>
+    <Load>MsDevProject-TRAE-Default.xml</Load>
+    <Merge>MsDevProject-Type-StaticLibrary.xml</Merge>
+    <Merge>MsDevProject-ProjectConfigs.xml</Merge>
+    <Merge>MsDevProject-TRAE-CompileSettings.xml</Merge>
+    <Merge>MsDevProject-SDK-Orbis.xml</Merge>
+    <Merge>MsDevProject-TRAE-Orbis.xml</Merge>
+    <Merge>MsDevProject-TRAE-Source.xml</Merge>
+  </Project>
+
+  <Project Name="TRAE-Durango" Path="TRAE-Durango.vcxproj">
+    <Platform>Durango</Platform>
+    <Settings>MsDevProject-Merge-Settings.xml</Settings>
+    <Load>MsDevProject-TRAE-Default.xml</Load>
+    <Merge>MsDevProject-Type-StaticLibrary.xml</Merge>
+    <Merge>MsDevProject-ProjectConfigs.xml</Merge>
+    <Merge>MsDevProject-TRAE-CompileSettings.xml</Merge>
+    <Merge>MsDevProject-SDK-Durango.xml</Merge>
+    <Merge>MsDevProject-TRAE-Durango.xml</Merge>
+    <Merge>MsDevProject-TRAE-Source.xml</Merge>
+  </Project>
+
+  <Project Name="TRAE-x64" Path="TRAE-x64.vcxproj">
+    <Platform>x64</Platform>
+    <Settings>MsDevProject-Merge-Settings.xml</Settings>
+    <Load>MsDevProject-TRAE-Default.xml</Load>
+    <Merge>MsDevProject-Type-StaticLibrary.xml</Merge>
+    <Merge>MsDevProject-ProjectConfigs.xml</Merge>
+    <Merge>MsDevProject-TRAE-CompileSettings.xml</Merge>
+    <Merge>MsDevProject-TRAE-x64.xml</Merge>
+    <Merge>MsDevProject-TRAE-Source.xml</Merge>
+    <Merge>MsDevProject-TRAE-Source-x64.xml</Merge>
+    <Merge>MsDevProject-TRAE-Shaders-x64.xml</Merge>
+    <Merge>MsDevProject-TRAE-EventDLLs-x64.xml</Merge>
+  </Project>
+
+</Solution>

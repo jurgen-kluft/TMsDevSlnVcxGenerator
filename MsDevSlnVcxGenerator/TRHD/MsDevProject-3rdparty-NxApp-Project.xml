@@ -1,0 +1,308 @@
+﻿<Project>
+  <PropertyGroup Label="Globals">
+    <NxAppVersion>3.3.91</NxAppVersion>
+  </PropertyGroup>
+
+  <PropertyGroup Label="General">
+    <OutDir>GeneratedData\NxApp\$(Platform)$(Configuration)\</OutDir>
+    <IntDir>GeneratedData\NxApp\$(Platform)$(Configuration).temp\</IntDir>
+  </PropertyGroup>
+
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='*'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(SolutionDir)cdc\3rdparty\</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+
+  <PropertyGroup Label="UserMacros">
+    <NxAppDir>$(SolutionDir)cdc\3rdParty\NxApp\</NxAppDir>
+    <NxAppSrcDir>$(NxAppDir)src\</NxAppSrcDir>
+    <NxAppIncDir>$(NxAppDir)inc\</NxAppIncDir>
+  </PropertyGroup>
+
+  <PropertyGroup Label="UserMacros">
+    <NvApiDir>$(NxAppDir)Src\nvapi\</NvApiDir>
+    <NvApiLibs Condition="'$(Platform)'=='x64'">$(NvApiDir)amd64\nvapi64.lib</NvApiLibs>
+  </PropertyGroup>
+
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='*'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(NvApiDir)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>$(NvApiLibs)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+
+  <ItemDefinitionGroup Condition="*">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(NxAppIncDir)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+
+  <PropertyGroup Label="UserMacros">
+    <DirectXLibDir Condition="'$(Platform)'=='x64'">Lib\x64</DirectXLibDir>
+    <DirectXLibDir Condition="'$(Platform)'=='Win32'">Lib\x86</DirectXLibDir>
+  </PropertyGroup>
+
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='*'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(SolutionDir)cdc\3rdparty\DirectX12\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)cdc\3rdparty\DirectX_SDK_June_2010\include\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IntDir)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(SolutionDir)cdc\3rdparty\DirectX12\$(DirectXLibDir)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)cdc\3rdparty\DirectX_SDK_June_2010\$(DirectXLibDir)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>d3dx11.lib</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='*'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(SolutionDir)cdc\3rdparty\ChromaSDK\inc\</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+
+  <PropertyGroup Label="UserMacros">
+    <SteamworksDir Condition="'$(SteamworksDir)'==''">$(SolutionDir)cdc\3rdparty\steamworks_sdk_135a\sdk\</SteamworksDir>
+    <SteamworksLibDir Condition="'$(Platform)'=='x64'">redistributable_bin\win64</SteamworksLibDir>
+    <SteamworksLibDir Condition="'$(Platform)'=='Win32'">redistributable_bin</SteamworksLibDir>
+    <SteamworksLibs Condition="'$(Platform)'=='x64'">steam_api64.lib</SteamworksLibs>
+    <SteamworksLibs Condition="'$(Platform)'=='Win32'">steam_api.lib</SteamworksLibs>
+    <Steam_LanguageDepots>1</Steam_LanguageDepots>
+  </PropertyGroup>
+
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='*'">
+    <ClCompile>
+      <PreprocessorDefinitions>NX_USE_STEAM_LANGUAGE_DEPOT=$(Steam_LanguageDepots)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SteamworksDir)public\</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(SteamworksDir)$(SteamworksLibDir)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>$(SteamworksLibs)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|*'" Label="Configuration">
+    <UseDebugLibraries>true</UseDebugLibraries>
+  </PropertyGroup>
+
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='*'">
+    <ClCompile>
+      <PreprocessorDefinitions>NX_API_DYNAMIC=1</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NX_API_BUILD=1</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NX_USE_TOBII=0</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NX_USE_VR=0</PreprocessorDefinitions>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>comctl32.lib</AdditionalDependencies>
+      <AdditionalDependencies>winmm.lib</AdditionalDependencies>
+      <AdditionalDependencies>dbghelp.lib</AdditionalDependencies>
+      <AdditionalDependencies>faultrep.lib</AdditionalDependencies>
+      <AdditionalDependencies>psapi.lib</AdditionalDependencies>
+      <AdditionalDependencies>setupapi.lib</AdditionalDependencies>
+      <AdditionalDependencies>newdev.lib</AdditionalDependencies>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+    <Lib>
+      <SubSystem>Windows</SubSystem>
+    </Lib>
+  </ItemDefinitionGroup>
+
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='{QA,Final}|*'">
+    <ClCompile>
+      <PreprocessorDefinitions>NX_GOLD_MASTER=1</PreprocessorDefinitions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='*'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+
+  <ItemGroup Label="Source">
+    <ClInclude Include="$(NxAppDir)Inc\NxActions.h" />
+    <ClInclude Include="$(NxAppDir)Inc\NxADL.h" />
+    <ClInclude Include="$(NxAppDir)Inc\NxAllocator.h" />
+    <ClInclude Include="$(NxAppDir)Inc\NxApi.h" />
+    <ClInclude Include="$(NxAppDir)Inc\NxApp.h" />
+    <ClInclude Include="$(NxAppDir)Inc\NxAssert.h" />
+    <ClInclude Include="$(NxAppDir)Inc\NxBenchmark.h" />
+    <ClInclude Include="$(NxAppDir)Inc\NxConfig.h" />
+    <ClInclude Include="$(NxAppDir)Inc\NxD3D.h" />
+    <ClInclude Include="$(NxAppDir)Inc\NxDebugKeys.h" />
+    <ClInclude Include="$(NxAppDir)Inc\NxDXGI.h" />
+    <ClInclude Include="$(NxAppDir)Inc\NxGameState.h" />
+    <ClInclude Include="$(NxAppDir)Inc\NxInput.h" />
+    <ClInclude Include="$(NxAppDir)Inc\NxLauncher.h" />
+    <ClInclude Include="$(NxAppDir)Inc\NxLocalization.h" />
+    <ClInclude Include="$(NxAppDir)Inc\NxLog.h" />
+    <ClInclude Include="$(NxAppDir)Inc\NxNvidia.h" />
+    <ClInclude Include="$(NxAppDir)Inc\NxRazerChroma.h" />
+    <ClInclude Include="$(NxAppDir)Inc\NxResourceLoader.h" />
+    <ClInclude Include="$(NxAppDir)Inc\NxRestrictedUAP.h" />
+    <ClInclude Include="$(NxAppDir)Inc\NxScaleform.h" />
+    <ClInclude Include="$(NxAppDir)Inc\NxSettings.h" />
+    <ClInclude Include="$(NxAppDir)Inc\NxSteam.h" />
+    <ClInclude Include="$(NxAppDir)Inc\NxTobii.h" />
+    <ClInclude Include="$(NxAppDir)Src\NxInput\NxGamepadViveController.h" />
+    <ClInclude Include="$(NxAppDir)Src\NxTobiiInfiniteScreen.h" />
+    <ClInclude Include="$(NxAppDir)Inc\NxTobiiTypes.h" />
+    <ClInclude Include="$(NxAppDir)Inc\NxUAP.h" />
+    <ClInclude Include="$(NxAppDir)Inc\NxTypes.h" />
+    <ClInclude Include="$(NxAppDir)Inc\NxVR.h" />
+    <ClInclude Include="$(NxAppDir)Inc\NxVROculusTexture.h" />
+    <ClInclude Include="$(NxAppDir)Inc\PCConfigDialog.h" />
+    <ClInclude Include="$(NxAppDir)Res\resource_config.h" />
+    <ClInclude Include="$(NxAppDir)Res\resource_fail_abort.h" />
+    <ClInclude Include="$(NxAppDir)Src\adl\adl_defines.h" />
+    <ClInclude Include="$(NxAppDir)Src\adl\adl_sdk.h" />
+    <ClInclude Include="$(NxAppDir)Src\adl\adl_structures.h" />
+    <ClInclude Include="$(NxAppDir)Src\adl\amd_ags.h" />
+    <ClInclude Include="$(NxAppDir)Src\adl\ati_ags.h" />
+    <ClInclude Include="$(NxAppDir)Src\adl\qbs\AmdDxExt.h" />
+    <ClInclude Include="$(NxAppDir)Src\adl\qbs\AmdDxExtApi.h" />
+    <ClInclude Include="$(NxAppDir)Src\adl\qbs\AmdDxExtIface.h" />
+    <ClInclude Include="$(NxAppDir)Src\adl\qbs\AmdDxExtQbStereoApi.h" />
+    <ClInclude Include="$(NxAppDir)Src\nvapi\nvapi.h" />
+    <ClInclude Include="$(NxAppDir)Src\NxCallstack.h" />
+    <ClInclude Include="$(NxAppDir)Inc\NxExceptions.h" />
+    <ClInclude Include="$(NxAppDir)Src\NxFailDialog.h" />
+    <ClInclude Include="$(NxAppDir)Src\NxGameWindow.h" />
+    <ClInclude Include="$(NxAppDir)Src\NxMain.h" />
+    <ClInclude Include="$(NxAppDir)Inc\NxMiniDump.h" />
+    <ClInclude Include="$(NxAppDir)Src\NxMonitor.h" />
+    <ClInclude Include="$(NxAppDir)Src\NxSwapChain.h" />
+    <ClInclude Include="$(NxAppDir)Src\NxTobiiEyetracker.h" />
+    <ClInclude Include="$(NxAppDir)Src\NxUtils.h" />
+    <ClInclude Include="$(NxAppDir)Src\NxInput\NxGamepadOculusTouch.h" />
+    <ClInclude Include="$(NxAppDir)Src\NxInput\NxDevice.h" />
+    <ClInclude Include="$(NxAppDir)Src\NxInput\NxGamepad.h" />
+    <ClInclude Include="$(NxAppDir)Src\NxInput\NxGamepadSCE.h" />
+    <ClInclude Include="$(NxAppDir)Src\NxInput\NxGamepadSteam.h" />
+    <ClInclude Include="$(NxAppDir)Src\NxInput\NxGamepadXInput.h" />
+    <ClInclude Include="$(NxAppDir)Src\NxInput\NxHumanInterfaceDevice.h" />
+    <ClInclude Include="$(NxAppDir)Src\NxInput\NxMouseDevice.h" />
+    <ClInclude Include="$(NxAppDir)Src\NxInput\NxJoystickDevice.h" />
+    <ClInclude Include="$(NxAppDir)Src\NxInput\NxKeyboardDevice.h" />
+    <ClInclude Include="$(NxAppDir)Src\NxInput\NxMouseLinearSmoothHelper.h" />
+
+    <ClCompile Include="$(NxAppDir)Src\NxActions.cpp" />
+    <ClCompile Include="$(NxAppDir)Src\NxADL.cpp" />
+    <ClCompile Include="$(NxAppDir)Src\NxApi.cpp" />
+    <ClCompile Include="$(NxAppDir)Src\NxApp.cpp" />
+    <ClCompile Include="$(NxAppDir)Src\NxAssert.cpp" />
+    <ClCompile Include="$(NxAppDir)Src\NxBenchmark.cpp" />
+    <ClCompile Include="$(NxAppDir)Src\NxCallstack.cpp" />
+    <ClCompile Include="$(NxAppDir)Src\NxD3D.cpp" />
+    <ClCompile Include="$(NxAppDir)Src\NxDebugKeys.cpp" />
+    <ClCompile Include="$(NxAppDir)Src\NxDXGI.cpp" />
+    <ClCompile Include="$(NxAppDir)Src\NxExceptions.cpp" />
+    <ClCompile Include="$(NxAppDir)Src\NxFailDialog.cpp" />
+    <ClCompile Include="$(NxAppDir)Src\NxGameState.cpp" />
+    <ClCompile Include="$(NxAppDir)Src\NxGameWindow.cpp" />
+    <ClCompile Include="$(NxAppDir)Src\NxGameWindowUAP.cpp" />
+    <ClCompile Include="$(NxAppDir)Src\NxInput.cpp" />
+    <ClCompile Include="$(NxAppDir)Src\NxInputUAP.cpp" />
+    <ClCompile Include="$(NxAppDir)Src\NxInput\NxGamepadViveController.cpp" />
+    <ClCompile Include="$(NxAppDir)Src\NxLauncher.cpp" />
+    <ClCompile Include="$(NxAppDir)Src\NxLocalization.cpp" />
+    <ClCompile Include="$(NxAppDir)Src\NxLog.cpp" />
+    <ClCompile Include="$(NxAppDir)Src\NxMiniDump.cpp" />
+    <ClCompile Include="$(NxAppDir)Src\NxMonitor.cpp" />
+    <ClCompile Include="$(NxAppDir)Src\NxNvidia.cpp" />
+    <ClCompile Include="$(NxAppDir)Src\NxRazerChroma.cpp" />
+    <ClCompile Include="$(NxAppDir)Src\NxResourceLoader.cpp" />
+    <ClCompile Include="$(NxAppDir)Src\NxScaleform.cpp" />
+    <ClCompile Include="$(NxAppDir)Src\NxSettings.cpp" />
+    <ClCompile Include="$(NxAppDir)Src\NxSteam.cpp" />
+    <ClCompile Include="$(NxAppDir)Src\NxTobii.cpp" />
+    <ClCompile Include="$(NxAppDir)Src\NxTobiiInfiniteScreen.cpp" />
+    <ClCompile Include="$(NxAppDir)Src\NxTobiiEyetracker.cpp" />
+    <ClCompile Include="$(NxAppDir)Src\NxUAP.cpp" />
+    <ClCompile Include="$(NxAppDir)Src\NxSwapChain.cpp" />
+    <ClCompile Include="$(NxAppDir)Src\NxUtils.cpp" />
+    <ClCompile Include="$(NxAppDir)Src\NxVR.cpp" />
+    <ClCompile Include="$(NxAppDir)Src\PCConfigDialog.cpp" />
+    <ClCompile Include="$(NxAppDir)Src\NxInput\NxGamepadOculusTouch.cpp" />
+    <ClCompile Include="$(NxAppDir)Src\NxInput\NxGamepad.cpp" />
+    <ClCompile Include="$(NxAppDir)Src\NxInput\NxDevice.cpp" />
+    <ClCompile Include="$(NxAppDir)Src\NxInput\NxGamepadSCE.cpp" />
+    <ClCompile Include="$(NxAppDir)Src\NxInput\NxGamepadSteam.cpp" />
+    <ClCompile Include="$(NxAppDir)Src\NxInput\NxGamepadXInput.cpp" />
+    <ClCompile Include="$(NxAppDir)Src\NxInput\NxHumanInterfaceDevice.cpp" />
+    <ClCompile Include="$(NxAppDir)Src\NxInput\NxJoystickDevice.cpp" />
+    <ClCompile Include="$(NxAppDir)Src\NxInput\NxKeyboardDevice.cpp" />
+    <ClCompile Include="$(NxAppDir)Src\NxInput\NxMouseDevice.cpp" />
+    <ClCompile Include="$(NxAppDir)Src\NxInput\NxMouseLinearSmoothHelper.cpp" />
+
+    <ResourceCompile Include="$(NxAppDir)Res\NxConfigDialog.rc" />
+    <ResourceCompile Include="$(NxAppDir)Res\NxFailAbort.rc" />
+
+    <FxCompile Include="$(NxAppDir)Res\QuadPixelShaderBorder.hlsl">
+      <ShaderType>Pixel</ShaderType>
+      <EntryPointName>QuadPixelShaderBorder</EntryPointName>
+      <ExcludedFromBuild>false</ExcludedFromBuild>
+      <ShaderModel>4.0</ShaderModel>
+      <HeaderFileOutput>$(IntDir)%(Filename).h</HeaderFileOutput>
+      <ObjectFileOutput>
+      </ObjectFileOutput>
+    </FxCompile>
+    <FxCompile Include="$(NxAppDir)Res\QuadPixelShaderColor.hlsl">
+      <ShaderType>Pixel</ShaderType>
+      <EntryPointName>QuadPixelShaderColor</EntryPointName>
+      <ExcludedFromBuild>false</ExcludedFromBuild>
+      <ShaderModel>4.0</ShaderModel>
+      <HeaderFileOutput>$(IntDir)%(Filename).h</HeaderFileOutput>
+      <ObjectFileOutput>
+      </ObjectFileOutput>
+    </FxCompile>
+    <FxCompile Include="$(NxAppDir)Res\QuadPixelShaderGamma.hlsl">
+      <ShaderType>Pixel</ShaderType>
+      <EntryPointName>QuadPixelShaderGamma</EntryPointName>
+      <ExcludedFromBuild>false</ExcludedFromBuild>
+      <ShaderModel>4.0</ShaderModel>
+      <HeaderFileOutput>$(IntDir)%(Filename).h</HeaderFileOutput>
+      <ObjectFileOutput>
+      </ObjectFileOutput>
+    </FxCompile>
+    <FxCompile Include="$(NxAppDir)Res\QuadPixelShaderGammaHDR.hlsl">
+      <ShaderType>Pixel</ShaderType>
+      <EntryPointName>QuadPixelShaderGammaHDR</EntryPointName>
+      <ExcludedFromBuild>false</ExcludedFromBuild>
+      <ShaderModel>4.0</ShaderModel>
+      <HeaderFileOutput>$(IntDir)%(Filename).h</HeaderFileOutput>
+      <ObjectFileOutput>
+      </ObjectFileOutput>
+    </FxCompile>
+    <FxCompile Include="$(NxAppDir)Res\QuadPixelShaderTexture.hlsl">
+      <ShaderType>Pixel</ShaderType>
+      <EntryPointName>QuadPixelShaderTexture</EntryPointName>
+      <ExcludedFromBuild>false</ExcludedFromBuild>
+      <ShaderModel>4.0</ShaderModel>
+      <HeaderFileOutput>$(IntDir)%(Filename).h</HeaderFileOutput>
+      <ObjectFileOutput>
+      </ObjectFileOutput>
+    </FxCompile>
+    <FxCompile Include="$(NxAppDir)Res\QuadVertexShader.hlsl">
+      <ShaderType>Vertex</ShaderType>
+      <EntryPointName>QuadVertexShader</EntryPointName>
+      <ExcludedFromBuild>false</ExcludedFromBuild>
+      <ShaderModel>4.0</ShaderModel>
+      <HeaderFileOutput>$(IntDir)%(Filename).h</HeaderFileOutput>
+      <ObjectFileOutput>
+      </ObjectFileOutput>
+    </FxCompile>
+    <None Include="$(NxAppDir)Inc\NxTobiiUtil.inl" />
+  </ItemGroup>
+</Project>

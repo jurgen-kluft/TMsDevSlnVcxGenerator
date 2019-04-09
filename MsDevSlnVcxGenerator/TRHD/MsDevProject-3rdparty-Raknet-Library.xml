@@ -1,0 +1,11 @@
+﻿<Project>
+
+  <ItemGroup Label="Source">
+    <ClCompile Include="SCAN->$(SolutionDir)cdc\3rdparty\raknet-4.0802\**\*.cpp" />
+    <ClInclude Include="SCAN->$(SolutionDir)cdc\3rdparty\raknet-4.0802\**\*.h" />
+    <ClCompile UnityBuild="$(SolutionDir)cdc\3rdparty\raknet-4.0802\**\Conglomerate_*.cpp" />
+  </ItemGroup>
+
+  <Include>MsDevProject-3rdparty-Raknet-Package.xml</Include>
+
+</Project>

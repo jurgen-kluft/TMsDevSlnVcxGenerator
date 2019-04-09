@@ -1,0 +1,30 @@
+﻿<Project>
+  <PropertyGroup Label="Globals">
+    <RaknetVersion>4.0802</RaknetVersion>
+  </PropertyGroup>
+
+  <ItemDefinitionGroup Condition="*">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(SolutionDir)cdc\3rdparty\RakNet-4.0802</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)cdc\3rdparty\RakNet-4.0802\DependentExtensions\Lobby2\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)cdc\3rdparty\RakNet-4.0802\DependentExtensions\Lobby2\Steam\</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='*'">
+    <ClCompile>
+      <PreprocessorDefinitions>RAKNET=1</PreprocessorDefinitions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='*|Durango'">
+    <ClCompile>
+      <PreprocessorDefinitions>_XBOX_720_COMPILE_AS_WINDOWS</PreprocessorDefinitions>
+      <PreprocessorDefinitions>RAKNET_SUPPORT_IPV6=1</PreprocessorDefinitions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='*|x64'">
+    <ClCompile>
+      <PreprocessorDefinitions>MAXIMUM_MTU_SIZE=1200</PreprocessorDefinitions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+
+</Project>

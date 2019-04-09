@@ -1,0 +1,10 @@
+﻿<Project>
+  <ItemDefinitionGroup Condition="*">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(SolutionDir)GeneratedData\Script\$(Platform)$(Configuration)\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)GeneratedData\Script\$(Platform)$(Configuration)\cdc\runtime\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)GeneratedData\Script\$(Platform)$(Configuration)\code\game\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)GeneratedData\Script\$(Platform)$(Configuration)\code\</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+</Project>

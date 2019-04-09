@@ -1,0 +1,12 @@
+﻿<Project>
+  <ItemGroup Label="Source">
+    <CustomBuild Include="SCAN->game\**\*.asm" />
+    <CustomBuild Remove="game\**\{ngc,ps2,psp,wii,gamecube,xbox,xenon,testmanager,zlib,dummy,tests,testbed}\**\*.asm" />
+    <CustomBuild Include="game\**\*.asm">
+      <FileType>Document</FileType>
+      <Command>tools\nasm-2.13.03\nasm.exe -f win64 -g -o"$(OutDir)%(RelativeDir)%(Filename).obj" %(RelativeDir)%(Filename)%(Extension)</Command>
+      <Outputs>$(OutDir)%(RelativeDir)%(Filename).obj</Outputs>
+      <Message>NASM %(Filename)</Message>
+    </CustomBuild>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,79 @@
+﻿<Project>
+
+  <PropertyGroup Label="Globals">
+    <EnablePCH>true</EnablePCH>
+  </PropertyGroup>
+
+  <PropertyGroup Label="General">
+    <OutDir>GeneratedData\CDC\$(Platform)$(Configuration)\</OutDir>
+    <IntDir>GeneratedData\CDC\$(Platform)$(Configuration).temp\</IntDir>
+  </PropertyGroup>
+
+  <ItemGroup Label="Source">
+    <ClCompile Include="SCAN->$(SolutionDir)cdc\runtime\**\*.{c,cpp}" />
+    <ClInclude Include="SCAN->$(SolutionDir)cdc\runtime\**\*.{h,hpp}" />
+
+    <ClCompile Include="$(SolutionDir)cdc\runtime\cdcLobby\**\*.*" Exclude_="*" />
+    <ClCompile Include="$(SolutionDir)cdc\runtime\cdcMath\Ref\**\*.*" Exclude_="*" />
+    <ClCompile Include="$(SolutionDir)cdc\runtime\cdcAnim\AnimController.cpp" Exclude_="*" />
+    <ClCompile Include="$(SolutionDir)cdc\runtime\cdcMath\cdcMathTests.cpp" Exclude_="*" />
+    <ClCompile Include="$(SolutionDir)cdc\runtime\cdcMulticore\MulticoreTest.cpp" Exclude_="*" />
+
+    <ClCompile Include="$(SolutionDir)cdc\runtime\**\Orbis\**\*.cpp" Exclude_="NOT(*|ORBIS)" />
+    <ClInclude Include="$(SolutionDir)cdc\runtime\**\Orbis\**\*.h" Exclude_="NOT(*|ORBIS)" />
+    <ClCompile Include="$(SolutionDir)cdc\runtime\**\Durango\**\*.cpp" Exclude_="NOT(*|Durango)" />
+    <ClInclude Include="$(SolutionDir)cdc\runtime\**\Durango\**\*.h" Exclude_="NOT(*|Durango)" />
+    <ClCompile Include="$(SolutionDir)cdc\runtime\**\Xbox\**\*.cpp" Exclude_="NOT(*|Durango)" />
+    <ClInclude Include="$(SolutionDir)cdc\runtime\**\Xbox\**\*.h" Exclude_="NOT(*|Durango)" />
+    <ClCompile Include="$(SolutionDir)cdc\runtime\**\MS\**\*.cpp" Exclude_="NOT(*|{Durango,x64})" />
+    <ClInclude Include="$(SolutionDir)cdc\runtime\**\MS\**\*.h" Exclude_="NOT(*|{Durango,x64})" />
+    <ClCompile Include="$(SolutionDir)cdc\runtime\**\Win32\**\*.cpp" Exclude_="NOT(*|x64)" />
+    <ClInclude Include="$(SolutionDir)cdc\runtime\**\Win32\**\*.h" Exclude_="NOT(*|x64)" />
+
+    <ClCompile Include="$(SolutionDir)cdc\runtime\**\MS\NetworkFileServer\**\*.*" Exclude_="*|x64" />
+    <ClCompile Include="$(SolutionDir)cdc\runtime\cdcMath\Win32\Win*.cpp" Exclude_="*|x64" />
+
+    <ClCompile Remove="$(SolutionDir)cdc\runtime\**\xenon\**\*.cpp" />
+    <ClInclude Remove="$(SolutionDir)cdc\runtime\**\xenon\**\*.h" />
+    <ClCompile Remove="$(SolutionDir)cdc\runtime\**\{ps2,ps3}\**\*.cpp" />
+    <ClInclude Remove="$(SolutionDir)cdc\runtime\**\{ps2,ps3}\**\*.h" />
+    <ClCompile Remove="$(SolutionDir)cdc\runtime\**\{ios,osx}\**\*.cpp" />
+    <ClInclude Remove="$(SolutionDir)cdc\runtime\**\{ios,osx}\**\*.h" />
+    <ClCompile Remove="$(SolutionDir)cdc\runtime\**\uap\**\*.cpp" />
+    <ClInclude Remove="$(SolutionDir)cdc\runtime\**\uap\**\*.h" />
+
+    <ClCompile Include="$(SolutionDir)cdc\runtime\**\{pc,pcshared}\**\*.cpp" Exclude_="NOT(*|{x64,Durango})" />
+    <ClInclude Include="$(SolutionDir)cdc\runtime\**\{pc,pcshared}\**\*.h" Exclude_="NOT(*|{x64,Durango})" />
+    <ClCompile Include="$(SolutionDir)cdc\runtime\**\{pcdx11,pcdx12}\**\*.cpp" Exclude_="NOT(*|{x64,Durango})" />
+    <ClInclude Include="$(SolutionDir)cdc\runtime\**\{pcdx11,pcdx12}\**\*.h" Exclude_="NOT(*|{x64,Durango})" />
+    <ClCompile Include="$(SolutionDir)cdc\runtime\**\D3DShared\**\*.cpp" Exclude_="NOT(*|{x64,Durango})" />
+    <ClInclude Include="$(SolutionDir)cdc\runtime\**\D3DShared\**\*.h" Exclude_="NOT(*|{x64,Durango})" />
+
+    <ClCompile Remove="$(SolutionDir)cdc\runtime\**\{obsolete,tests}\**\*.cpp" />
+    <ClInclude Remove="$(SolutionDir)cdc\runtime\**\{obsolete,tests}\**\*.h" />
+
+    <ClCompile Include="$(SolutionDir)cdc\runtime\**\*.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'!='None|None'">Use</PrecompiledHeader>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'!='None|None'">cdcPrecompiled\CDCPrecompiled.h</ForcedIncludeFiles>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'!='None|None'">cdcPrecompiled\CDCPrecompiled.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'!='None|None'">$(SolutionDir)cdc\runtime\bfxMover;$(SolutionDir)cdc\runtime\bfxMover3d;$(SolutionDir)cdc\runtime\bfxPlanner;$(SolutionDir)cdc\runtime\bfxSystem;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'!='None|None'"> %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+
+    <ClCompile Include="$(SolutionDir)cdc\runtime\cdcPrecompiled\CDCPrecompiled.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'!='None|None'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'!='None|None'">cdcPrecompiled\CDCPrecompiled.h</PrecompiledHeaderFile>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'!='None|None'"> %(AdditionalOptions)</AdditionalOptions>
+      <CompileAs Condition="'$(Platform)'=='Orbis'">CompileAsCppHeader</CompileAs>
+    </ClCompile>
+
+    <ClCompile UnityBuild="$(SolutionDir)cdc\runtime\**\Conglomerate_*.cpp">
+      <IncludeDirectories>$(SolutionDir)code</IncludeDirectories>
+      <IncludeDirectories>$(SolutionDir)code\game</IncludeDirectories>
+      <IncludeDirectories>$(SolutionDir)cdc\runtime</IncludeDirectories>
+    </ClCompile>
+  </ItemGroup>
+
+  <Include>MsDevProject-TR2-CDC-Package.xml</Include>
+
+</Project>

@@ -1,0 +1,80 @@
+﻿<Project>
+  <ItemGroup Label="Source">
+    <ClCompile Include="SCAN->cdc\runtime\**\*.{c,cpp}" />
+    <ClInclude Include="SCAN->cdc\runtime\**\*.{h,hpp}" />
+
+    <ClCompile Remove="cdc\runtime\**\{ngc,ps2,psp,wii,gamecube,xbox,xenon,testmanager,zlib,dummy,tests,testbed}\**\*.{c,cpp}" />
+    <ClInclude Remove="cdc\runtime\**\{ngc,ps2,psp,wii,gamecube,xbox,xenon,testmanager,zlib,dummy,tests,testbed}\**\*.{h,hpp}" />
+
+    <ClCompile Remove="cdc\runtime\cdcmath\cdcmath.cpp" />
+    <ClCompile Remove="cdc\runtime\cdcrender\pc\cylinder.cpp" />
+    <ClCompile Remove="cdc\runtime\cdcrender\pc\cylinder2.cpp" />
+    <ClCompile Remove="cdc\runtime\cdcrender\pc\cylinderx.cpp" />
+    <ClCompile Remove="cdc\runtime\cdcrender\pc\cylindery.cpp" />
+    <ClCompile Remove="cdc\runtime\cdcscript\cdcscript.cpp" />
+    <ClInclude Include="tools\mkevent\scrpattr.h" />
+    <ClInclude Include="cdc\3rdparty\fmod_cd\fmod.h" />
+
+    <ClCompile Include="SCAN->game\**\*.{c,cpp}" />
+    <ClInclude Include="SCAN->game\**\*.{h,hpp}" />
+
+    <ClCompile Remove="game\**\{ngc,ps2,psp,wii,gamecube,xbox,xenon,testmanager,zlib,dummy,tests,testbed}\**\*.{c,cpp}" />
+    <ClInclude Remove="game\**\{ngc,ps2,psp,wii,gamecube,xbox,xenon,testmanager,zlib,dummy,tests,testbed}\**\*.{h,hpp}" />
+
+    <ClCompile Remove="game\animation\animcontroller.cpp" />
+    <ClCompile Remove="game\animation\animinterp.cpp" />
+    <ClCompile Remove="game\pc\d3d\d3d.asm" />
+    <ClCompile Remove="game\player\algoctrl.cpp" />
+    <ClCompile Remove="game\player\combatreticle.cpp" />
+    <ClCompile Remove="game\player\fasttraversal.cpp" />
+    <ClCompile Remove="game\player\health.cpp" />
+    <ClCompile Remove="game\player\interpoblend.cpp" />
+    <ClCompile Remove="game\player\message.cpp" />
+    <ClCompile Remove="game\player\player.c" />
+    <ClCompile Remove="game\player\playerdbug.c" />
+    <ClCompile Remove="game\player\playerinput.cpp" />
+    <ClCompile Remove="game\player\playermarkup.cpp" />
+    <ClCompile Remove="game\player\playerlib.c" />
+    <ClCompile Remove="game\player\sensemanager.cpp" />
+    <ClCompile Remove="game\player\senses.cpp" />
+    <ClCompile Remove="game\player\skinoverlaymanager.cpp" />
+    <ClCompile Remove="game\player\state\playerair.c" />
+    <ClCompile Remove="game\player\state\playerattack.c" />
+    <ClCompile Remove="game\player\state\playercombat.c" />
+    <ClCompile Remove="game\player\state\playergrapple.c" />
+    <ClCompile Remove="game\player\state\playergroundcrawl.cpp" />
+    <ClCompile Remove="game\player\state\playergroundcrouch.cpp" />
+    <ClCompile Remove="game\player\state\playergroundidle.cpp" />
+    <ClCompile Remove="game\player\state\playergroundmove.cpp" />
+    <ClCompile Remove="game\player\state\playergroundroll.cpp" />
+    <ClCompile Remove="game\player\state\playergroundslide.cpp" />
+    <ClCompile Remove="game\player\state\playerhpole.cpp" />
+    <ClCompile Remove="game\player\state\playerinteract.c" />
+    <ClCompile Remove="game\player\state\playerjump.c" />
+    <ClCompile Remove="game\player\state\playerladder.c" />
+    <ClCompile Remove="game\player\state\playerland.c" />
+    <ClCompile Remove="game\player\state\playerledge.c" />
+    <ClCompile Remove="game\player\state\playermantle.cpp" />
+    <ClCompile Remove="game\player\state\playermelee.cpp" />
+    <ClCompile Remove="game\player\state\playerpatterninteract.c" />
+    <ClCompile Remove="game\player\state\playerperch.cpp" />
+    <ClCompile Remove="game\player\state\playerphysicsroll.c" />
+    <ClCompile Remove="game\player\state\playerpuppet.c" />
+    <ClCompile Remove="game\player\state\playerpushpull.c" />
+    <ClCompile Remove="game\player\state\playerreact.c" />
+    <ClCompile Remove="game\player\state\playerrope.c" />
+    <ClCompile Remove="game\player\state\playerstdground.c" />
+    <ClCompile Remove="game\player\state\playerswim.c" />
+    <ClCompile Remove="game\player\state\playervpole.cpp" />
+    <ClCompile Remove="game\player\state\playerwall.c" />
+    <ClCompile Remove="game\player\state\playerwallvpole.cpp" />
+    <ClCompile Remove="game\player\state\playerslope.c" />
+    <ClCompile Remove="game\script\sobject.cpp" />
+
+    <ClCompile Include="SCAN->trhd\**\*.{c,cpp}" />
+    <ClInclude Include="SCAN->trhd\**\*.{h,hpp}" />
+
+    <ClInclude Include="SCAN->dtp\output\**\*.{h,hpp}" />
+  </ItemGroup>
+  
+</Project>

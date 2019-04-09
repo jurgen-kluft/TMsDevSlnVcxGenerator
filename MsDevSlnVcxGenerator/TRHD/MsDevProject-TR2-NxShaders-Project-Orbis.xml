@@ -1,0 +1,28 @@
+﻿<Project>
+  <ItemGroup Label="Source">
+    <NXShader Include="SCAN->cdc\runtime\cdcRender\orbis\shaders\templates\NGACommon*.nxShader" Exclude_="NOT(*|ORBIS)">
+      <Options>/HDR</Options>
+    </NXShader>
+    <NXShader Include="SCAN->cdc\runtime\cdcMovie\orbis\Shaders\Movie*.nxshader" Exclude_="NOT(*|ORBIS)">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\orbis\shaders\CheckerBoardResolve.nxshader" Exclude_="NOT(*|ORBIS)">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="cdc\runtime\cdcRender\orbis\shaders\clearVS.nxshader" Exclude_="NOT(*|ORBIS)">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="SCAN->cdc\runtime\cdcRender\orbis\shaders\OrbisUtil*.nxshader" Exclude_="NOT(*|ORBIS)">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="code\game\orbis\Shaders\DebugDepthPS.nxshader" Exclude_="NOT(*|ORBIS)">
+      <Options>/HASH</Options>
+    </NXShader>
+    <NXShader Include="**\*.nxshader">
+      <Options>/ORBIS</Options>
+    </NXShader>
+
+    <Lib Include="->$(OutDir)**\*.o" />
+
+  </ItemGroup>
+</Project>

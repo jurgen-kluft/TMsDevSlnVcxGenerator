@@ -1,0 +1,13 @@
+﻿<Project>
+  <PropertyGroup Label="Globals">
+    <VXGIVersion>1.0.0.20510404</VXGIVersion>
+  </PropertyGroup>
+  <ItemGroup Label="Source">
+    <ClInclude Include="SCAN->$(SolutionDir)cdc\3rdparty\VXGI\include\**\*.h" />
+  </ItemGroup>
+  <ItemDefinitionGroup Condition="*">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(SolutionDir)cdc\3rdParty\VXGI\include</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+</Project>

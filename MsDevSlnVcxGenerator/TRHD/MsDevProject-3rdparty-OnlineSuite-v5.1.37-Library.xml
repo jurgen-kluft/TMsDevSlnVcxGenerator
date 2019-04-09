@@ -1,0 +1,74 @@
+﻿<Project>
+  <PropertyGroup Label="Globals">
+    <OnlineSuiteVersion>v5.1.37</OnlineSuiteVersion>
+  </PropertyGroup>
+  <ItemGroup Label="Source">
+    <CustomBuild Include="cdc\runtime\OnlineSuite\GenerateOTCFG.otcfg">
+      <Outputs Condition="'$(Configuration)|$(Platform)'!='None|None'">$(SolutionDir)GeneratedData\OnlineSuite\$(Platform)$(Configuration)\cdc\runtime\otcfg\otcfg.h</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'!='None|None'">Generate OTCFG.h for Online Suite</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'!='None|None'">call $(SolutionDir)cdc\3rdParty\OnlineSuite\v5.1.37\otcfg\otcfg.bat Nothing $(Platform)$(Configuration) "$(Platform)" $(SolutionDir)GeneratedData\OnlineSuite\$(Platform)$(Configuration)\cdc\runtime\otcfg\</Command>
+    </CustomBuild>
+
+    <ClInclude Include="SCAN->$(SolutionDir)cdc\3rdParty\OnlineSuite\v5.1.37\otcfg\**\*.h">
+    </ClInclude>
+    <ClCompile Include="SCAN->$(SolutionDir)cdc\3rdParty\OnlineSuite\v5.1.37\otcfg\**\*.cpp">
+      <Warnings Condition="'$(Platform)'=='ORBIS'">WarningsOff</Warnings>
+
+      <WarningLevel Condition="'$(Platform)'=='x64'">TurnOffAllWarnings</WarningLevel>
+      <AdditionalOptions Condition="'$(Platform)'=='x64'"> %(AdditionalOptions)</AdditionalOptions>
+      <WarningLevel Condition="'$(Platform)'=='Durango'">TurnOffAllWarnings</WarningLevel>
+      <AdditionalOptions Condition="'$(Platform)'=='Durango'"> %(AdditionalOptions)</AdditionalOptions>
+
+    </ClCompile>
+    <ClCompile Remove="$(SolutionDir)cdc\3rdParty\OnlineSuite\v5.1.37\otcfg\**\gameinterfaceandroid.cpp" />
+    <ClCompile Remove="$(SolutionDir)cdc\3rdParty\OnlineSuite\v5.1.37\otcfg\**\gameinterfaceios.cpp" />
+    <ClCompile Remove="$(SolutionDir)cdc\3rdParty\OnlineSuite\v5.1.37\otcfg\**\gameinterfacelinux.cpp" />
+    <ClCompile Remove="$(SolutionDir)cdc\3rdParty\OnlineSuite\v5.1.37\otcfg\**\gameinterfaceonlive.cpp" />
+    <ClCompile Remove="$(SolutionDir)cdc\3rdParty\OnlineSuite\v5.1.37\otcfg\**\gameinterfaceosx.cpp" />
+    <ClCompile Remove="$(SolutionDir)cdc\3rdParty\OnlineSuite\v5.1.37\otcfg\**\gameinterfaceps3.cpp" />
+    <ClCompile Remove="$(SolutionDir)cdc\3rdParty\OnlineSuite\v5.1.37\otcfg\**\gameinterfacexbox360.cpp" />
+  </ItemGroup>
+  <ItemDefinitionGroup Condition="*">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(SolutionDir)cdc\3rdParty\OnlineSuite\v5.1.37\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)cdc\3rdParty\OnlineSuite\v5.1.37\inc\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)GeneratedData\OnlineSuite\$(Platform)$(Configuration)\cdc\runtime\</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='*|x64'">
+    <Link>
+      <AdditionalLibraryDirectories>$(SolutionDir)cdc\3rdParty\OnlineSuite\v5.1.37\lib\x64\2017\static\</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='*|Durango'">
+    <Link>
+      <AdditionalLibraryDirectories>$(SolutionDir)cdc\3rdParty\OnlineSuite\v5.1.37\lib\durango\2017\dynamic\</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='*|ORBIS'">
+    <Link>
+      <AdditionalLibraryDirectories>$(SolutionDir)cdc\3rdParty\OnlineSuite\v5.1.37\lib\orbis\</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|*'">
+    <Link>
+      <AdditionalDependencies>otmetrics_debug.lib</AdditionalDependencies>
+      <AdditionalDependencies>otstd_debug.lib</AdditionalDependencies>
+      <AdditionalDependencies>otnet_debug.lib</AdditionalDependencies>
+      <AdditionalDependencies>psock_debug.lib</AdditionalDependencies>
+      <AdditionalDependencies>otpsp_debug.lib</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='{Dev,Release,Profile,QA,Final}|*'">
+    <Link>
+      <AdditionalDependencies>otmetrics.lib</AdditionalDependencies>
+      <AdditionalDependencies>otstd.lib</AdditionalDependencies>
+      <AdditionalDependencies>otnet.lib</AdditionalDependencies>
+      <AdditionalDependencies>psock.lib</AdditionalDependencies>
+      <AdditionalDependencies>otpsp.lib</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+
+</Project>

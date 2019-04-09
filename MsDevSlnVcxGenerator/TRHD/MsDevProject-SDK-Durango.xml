@@ -1,0 +1,74 @@
+﻿<Project>
+  <PropertyGroup Label="Globals">
+    <DurangoXdkVersion>$(XdkEdition)</DurangoXdkVersion>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <TargetRuntime>Native</TargetRuntime>
+    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='*|Durango'" Label="Configuration">
+    <LinkIncremental>false</LinkIncremental>
+    <EmbedManifest>false</EmbedManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Durango'" Label="Configuration">
+    <EmbedManifest>false</EmbedManifest>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+
+  <PropertyGroup Label="SDK">
+    <ReferencePath>$(Console_SdkLibPath)</ReferencePath>
+    <ReferencePath>$(Console_SdkWindowsMetadataPath)</ReferencePath>
+    <LibraryPath>$(Console_SdkLibPath)</LibraryPath>
+    <LibraryWPath>$(Console_SdkLibPath)</LibraryWPath>
+    <LibraryWPath>$(Console_SdkWindowsMetadataPath)</LibraryWPath>
+    <IncludePath>$(Console_SdkIncludeRoot)</IncludePath>
+    <ExecutablePath>$(DurangoXDK)bin</ExecutablePath>
+    <ExecutablePath>$(VC_ExecutablePath_x64)</ExecutablePath>
+    <ExecutablePath>$(WindowsSDK_ExecutablePath)</ExecutablePath>
+    <ExecutablePath>$(VS_ExecutablePath)</ExecutablePath>
+    <ExecutablePath>$(MSBuild_ExecutablePath)</ExecutablePath>
+    <ExecutablePath>$(FxCopDir)</ExecutablePath>
+    <ExecutablePath>$(PATH)</ExecutablePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='*|Durango'">
+    <ClCompile>
+      <AdditionalUsingDirectories>$(Console_SdkPackagesRoot)</AdditionalUsingDirectories>
+      <AdditionalUsingDirectories>$(Console_SdkWindowsMetadataPath)</AdditionalUsingDirectories>
+      <AdditionalUsingDirectories>%(AdditionalUsingDirectories)</AdditionalUsingDirectories>
+      <PreprocessorDefinitions>__WRL_NO_DEFAULT_LIB__</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32_LEAN_AND_MEAN</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WINAPI_FAMILY=WINAPI_FAMILY_TV_TITLE;</PreprocessorDefinitions>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(Console_SdkLibPath)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>ws2_32.lib</AdditionalDependencies>
+      <AdditionalDependencies>combase.lib</AdditionalDependencies>
+      <AdditionalDependencies>kernelx.lib</AdditionalDependencies>
+      <AdditionalDependencies>dxguid.lib</AdditionalDependencies>
+      <AdditionalDependencies>uuid.lib</AdditionalDependencies>
+      <AdditionalDependencies>xaudio2.lib</AdditionalDependencies>
+      <AdditionalDependencies>mfplat.lib</AdditionalDependencies>
+      <AdditionalDependencies>mfreadwrite.lib</AdditionalDependencies>
+      <AdditionalDependencies>mfuuid.lib</AdditionalDependencies>
+      <AdditionalDependencies>consoleid.lib</AdditionalDependencies>
+      <AdditionalDependencies>d3dcompiler.lib</AdditionalDependencies>
+      <AdditionalDependencies>etwplus.lib</AdditionalDependencies>
+      <AdditionalDependencies>pixevt.lib</AdditionalDependencies>
+      <AdditionalDependencies>xg_x.lib</AdditionalDependencies>
+      <AdditionalDependencies>d3d11_x.lib</AdditionalDependencies>
+      <AdditionalOptions>/NODEFAULTLIB:oldnames.lib</AdditionalOptions>
+      <AdditionalOptions>/NODEFAULTLIB:runtimeobject.lib</AdditionalOptions>
+      <AdditionalOptions>%(AdditionalOptions)</AdditionalOptions>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Durango'">
+    <ClCompile>
+      <PreprocessorDefinitions>_DEBUG</PreprocessorDefinitions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='{Dev,Release,Profile,QA,Final}|Durango'">
+    <ClCompile>
+      <PreprocessorDefinitions>NDEBUG</PreprocessorDefinitions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+</Project>

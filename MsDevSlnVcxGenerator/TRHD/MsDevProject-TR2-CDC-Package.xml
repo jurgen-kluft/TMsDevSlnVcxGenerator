@@ -1,0 +1,130 @@
+﻿<Project>
+
+  <ItemDefinitionGroup Condition="*">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(SolutionDir)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)code</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)code\game</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)cdc\runtime</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>CDC_GAME_NAME=tr2</PreprocessorDefinitions>
+      <PreprocessorDefinitions>CDC_USE_SYSTEM_PLACEMENT_NEW=1</PreprocessorDefinitions>
+      <PreprocessorDefinitions>DISABLE_ONLINE_FEATURES</PreprocessorDefinitions>
+      <PreprocessorDefinitions>ENABLE_NETZ=0</PreprocessorDefinitions>
+      <PreprocessorDefinitions>GAME_TR8=1</PreprocessorDefinitions>
+      <PreprocessorDefinitions>PLANNERINTERFACE_USE_VOLUMETRIC_PLANNER</PreprocessorDefinitions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='*|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(SolutionDir)cdc\3rdparty</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)cdc\3rdparty\DirectX12\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)cdc\3rdparty\DirectX_SDK_June_2010\include</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_HAS_EXCEPTIONS=0</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_DEPRECATE</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_WIN32_WINNT=0x0600</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WINVER=0x0600</PreprocessorDefinitions>
+      <PreprocessorDefinitions>CDC_64</PreprocessorDefinitions>
+      <PreprocessorDefinitions>CDC_DX11</PreprocessorDefinitions>
+      <PreprocessorDefinitions>CDC_DX12</PreprocessorDefinitions>
+      <PreprocessorDefinitions>CDC_NIXXES</PreprocessorDefinitions>
+      <PreprocessorDefinitions>CDC_PER_PIXEL_LIT</PreprocessorDefinitions>
+      <PreprocessorDefinitions>CDC_WINDOWS</PreprocessorDefinitions>
+      <PreprocessorDefinitions>G2_D3D</PreprocessorDefinitions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PreprocessorDefinitions>D3D_DEBUG_INFO=1</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NX_API_DYNAMIC</PreprocessorDefinitions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='*|Durango'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(SolutionDir)cdc\3rdparty</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_DEPRECATE</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_CRT_USE_WINAPI_PARTITION_APP</PreprocessorDefinitions>
+      <PreprocessorDefinitions>CDC_DURANGO</PreprocessorDefinitions>
+      <PreprocessorDefinitions>CDC_DX11</PreprocessorDefinitions>
+      <PreprocessorDefinitions>CDC_PER_PIXEL_LIT</PreprocessorDefinitions>
+      <PreprocessorDefinitions>CDC_64</PreprocessorDefinitions>
+      <PreprocessorDefinitions>CDC_USE_DURANGO_BINK_MOVIE_PLAYER=1</PreprocessorDefinitions>
+      <PreprocessorDefinitions>D3D_MONOLITHIC</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32_LEAN_AND_MEAN</PreprocessorDefinitions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='*|ORBIS'">
+    <ClCompile>
+      <PreprocessorDefinitions>_AMD64_</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_ORBIS</PreprocessorDefinitions>
+      <PreprocessorDefinitions>CDC_ORBIS</PreprocessorDefinitions>
+      <PreprocessorDefinitions>CDC_64</PreprocessorDefinitions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='{Release,Profile,QA,Final}|ORBIS'">
+    <ClCompile>
+      <PreprocessorDefinitions>SCE_GNM_RELEASE</PreprocessorDefinitions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='{QA,Final}|ORBIS'">
+    <ClCompile>
+      <PreprocessorDefinitions>SCE_DBG_PLAYGO_ENABLED=0</PreprocessorDefinitions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='{Debug,Dev,Release,Profile}|*'">
+    <ClCompile>
+      <PreprocessorDefinitions>DBG_BUILD</PreprocessorDefinitions>
+      <PreprocessorDefinitions>G2_ASSERT</PreprocessorDefinitions>
+      <PreprocessorDefinitions>G2_ASSERT_DBG</PreprocessorDefinitions>
+      <PreprocessorDefinitions>G2_EXCEPT</PreprocessorDefinitions>
+      <PreprocessorDefinitions>G2_DEBUGDRAW</PreprocessorDefinitions>
+      <PreprocessorDefinitions>G2_DEBUGLINES</PreprocessorDefinitions>
+      <PreprocessorDefinitions>G2_DEBUGPRINT</PreprocessorDefinitions>
+      <PreprocessorDefinitions>G2_PRINT</PreprocessorDefinitions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='{Debug,Dev}|*'">
+    <ClCompile>
+      <PreprocessorDefinitions>BFX_BUILD_ASSERT</PreprocessorDefinitions>
+      <PreprocessorDefinitions>CDC_BUILD_DEBUG_TIMING</PreprocessorDefinitions>
+      <PreprocessorDefinitions>DEBUG_ENABLE_PROFILE</PreprocessorDefinitions>
+      <PreprocessorDefinitions>G2_ALLOWWINDOW</PreprocessorDefinitions>
+      <PreprocessorDefinitions>G2_PROFILE</PreprocessorDefinitions>
+      <PreprocessorDefinitions>REAVERGUI</PreprocessorDefinitions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='{Debug,Dev,Release}|*'">
+    <ClCompile>
+      <PreprocessorDefinitions>D3D_DEBUG_INFO</PreprocessorDefinitions>
+      <PreprocessorDefinitions>OPT_BUILD</PreprocessorDefinitions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Profile|*'">
+    <ClCompile>
+      <PreprocessorDefinitions>BFX_BUILD_ASSERT</PreprocessorDefinitions>
+      <PreprocessorDefinitions>CDC_BUILD_DEBUG_TIMING</PreprocessorDefinitions>
+      <PreprocessorDefinitions>CDC_PIX_TIMING_CAP</PreprocessorDefinitions>
+      <PreprocessorDefinitions>D3D_DEBUG_INFO</PreprocessorDefinitions>
+      <PreprocessorDefinitions>DEBUG_ENABLE_PROFILE</PreprocessorDefinitions>
+      <PreprocessorDefinitions>G2_ALLOWWINDOW</PreprocessorDefinitions>
+      <PreprocessorDefinitions>G2_PROFILE</PreprocessorDefinitions>
+      <PreprocessorDefinitions>OPT_BUILD</PreprocessorDefinitions>
+      <PreprocessorDefinitions>PROFILE</PreprocessorDefinitions>
+      <PreprocessorDefinitions>REAVERGUI</PreprocessorDefinitions>
+      <PreprocessorDefinitions>USE_BIGFILE</PreprocessorDefinitions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='QA|*'">
+    <ClCompile>
+      <PreprocessorDefinitions>QA_BUILD</PreprocessorDefinitions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='{QA,Final}|*'">
+    <ClCompile>
+      <PreprocessorDefinitions>FIN_BUILD</PreprocessorDefinitions>
+      <PreprocessorDefinitions>GM_BUILD</PreprocessorDefinitions>
+      <PreprocessorDefinitions>USE_BIGFILE</PreprocessorDefinitions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+</Project>

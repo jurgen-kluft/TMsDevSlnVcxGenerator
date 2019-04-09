@@ -1,0 +1,19 @@
+﻿<Project>
+  <PropertyGroup Label="Globals">
+    <AtiAgsVersion>Revision 4 – Sep 9 2010</AtiAgsVersion>
+  </PropertyGroup>
+  <ItemGroup Label="Source">
+    <ClInclude Include="SCAN->$(SolutionDir)cdc\3rdparty\ATIAGSLib\inc\*.h" />
+  </ItemGroup>
+  <ItemDefinitionGroup Condition="*">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(SolutionDir)cdc\3rdParty\ATIAGSLib\inc\</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='*|x64'">
+    <Link>
+      <AdditionalLibraryDirectories>$(SolutionDir)cdc\3rdParty\ATIAGSLib\lib\x64\static\</AdditionalLibraryDirectories>
+      <AdditionalDependencies>atiags64.lib</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+</Project>

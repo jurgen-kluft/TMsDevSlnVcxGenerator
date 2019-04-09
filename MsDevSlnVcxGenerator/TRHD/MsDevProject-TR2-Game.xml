@@ -1,0 +1,103 @@
+﻿<Project>
+
+  <PropertyGroup Label="General">
+    <OutDir>GeneratedData\TR2\$(Platform)$(Configuration)\</OutDir>
+    <IntDir>GeneratedData\TR2\$(Platform)$(Configuration).temp\</IntDir>
+  </PropertyGroup>
+
+  <ItemGroup Label="Source">
+    <ClCompile Include="SCAN->$(SolutionDir)code\game\**\*.{c,cpp}" />
+    <ClInclude Include="SCAN->$(SolutionDir)code\game\**\*.{h,hpp}" />
+
+    <ClCompile Remove="$(SolutionDir)code\game\**\xenon\**\*.cpp" />
+    <ClInclude Remove="$(SolutionDir)code\game\**\xenon\**\*.h" />
+    <ClCompile Remove="$(SolutionDir)code\game\**\ps3\**\*.cpp" />
+    <ClInclude Remove="$(SolutionDir)code\game\**\ps3\**\*.h" />
+    <ClCompile Remove="$(SolutionDir)code\game\**\ios\**\*.cpp" />
+    <ClInclude Remove="$(SolutionDir)code\game\**\ios\**\*.h" />
+    <ClCompile Remove="$(SolutionDir)code\game\**\osx\**\*.cpp" />
+    <ClInclude Remove="$(SolutionDir)code\game\**\osx\**\*.h" />
+    <ClCompile Remove="$(SolutionDir)code\game\**\uap\**\*.cpp" />
+    <ClInclude Remove="$(SolutionDir)code\game\**\uap\**\*.h" />
+
+    <ClCompile Include="$(SolutionDir)code\game\ps3\spu\MathTests.cpp" Exclude_="*" />
+
+    <ClCompile Include="$(SolutionDir)code\game\**\Orbis\**\*.cpp" Exclude_="NOT(*|ORBIS)" />
+    <ClInclude Include="$(SolutionDir)code\game\**\Orbis\**\*.h" Exclude_="NOT(*|ORBIS)" />
+    <ClCompile Include="$(SolutionDir)code\game\**\Durango\**\*.cpp" Exclude_="NOT(*|Durango)" />
+    <ClInclude Include="$(SolutionDir)code\game\**\Durango\**\*.h" Exclude_="NOT(*|Durango)" />
+    <ClCompile Include="$(SolutionDir)code\game\**\Xbox\**\*.cpp" Exclude_="NOT(*|Durango)" />
+    <ClInclude Include="$(SolutionDir)code\game\**\Xbox\**\*.h" Exclude_="NOT(*|Durango)" />
+    <ClCompile Include="$(SolutionDir)code\game\**\MS\**\*.cpp" Exclude_="NOT(*|x64)" />
+    <ClInclude Include="$(SolutionDir)code\game\**\MS\**\*.h" Exclude_="NOT(*|x64)" />
+    <ClCompile Include="$(SolutionDir)code\game\**\Win32\**\*.cpp" Exclude_="NOT(*|x64)" />
+    <ClInclude Include="$(SolutionDir)code\game\**\Win32\**\*.h" Exclude_="NOT(*|x64)" />
+    <ClCompile Include="$(SolutionDir)code\game\**\PC\**\*.cpp" Exclude_="NOT(*|x64)" />
+    <ClInclude Include="$(SolutionDir)code\game\**\PC\**\*.h" Exclude_="NOT(*|x64)" />
+
+    <ClCompile Include="$(SolutionDir)code\game\**\*.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)'!='None'">Use</PrecompiledHeader>
+      <ForcedIncludeFiles Condition="'$(Configuration)'!='None'">gamePrecompiled\gamePrecompiled.h</ForcedIncludeFiles>
+      <PrecompiledHeaderFile Condition="'$(Configuration)'!='None'">gamePrecompiled\gamePrecompiled.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)'!='None'">$(SolutionDir)cdc\runtime\bfxMover;$(SolutionDir)cdc\runtime\bfxMover3d;$(SolutionDir)cdc\runtime\bfxPlanner;$(SolutionDir)cdc\runtime\bfxSystem;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions Condition="'$(Configuration)'!='None'"> %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+
+    <ClCompile Include="$(SolutionDir)code\game\gamePrecompiled\gamePrecompiled.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)'!='None'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)'!='None'">gamePrecompiled\gamePrecompiled.h</PrecompiledHeaderFile>
+      <AdditionalOptions Condition="'$(Configuration)'!='None'"> %(AdditionalOptions)</AdditionalOptions>
+      <CompileAs Condition="'$(Platform)'=='ORBIS'">CompileAsCppHeader</CompileAs>
+    </ClCompile>
+
+    <ClCompile UnityBuild="$(SolutionDir)code\game\**\Conglomerate_*.cpp">
+      <IncludeDirectories>$(SolutionDir)code</IncludeDirectories>
+      <IncludeDirectories>$(SolutionDir)code\game</IncludeDirectories>
+      <IncludeDirectories>$(SolutionDir)cdc\runtime</IncludeDirectories>
+    </ClCompile>
+
+    <ResourceCompile Include="$(SolutionDir)code\game\pc\Atlantis.rc" Exclude_="NOT(*|x64)" />
+
+  </ItemGroup>
+
+  <ItemDefinitionGroup Condition="*">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(SolutionDir)code\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)code\game\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)cdc\runtime\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>PLATFORM_64BIT</PreprocessorDefinitions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='*|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(SolutionDir)code\game\pc</AdditionalIncludeDirectories>
+      <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <AdditionalOptions>/ignore:4099 %(AdditionalOptions)</AdditionalOptions>
+    </Link>
+    <Manifest>
+      <AdditionalManifestFiles>code\game\pc\dpiaware.manifest %(AdditionalManifestFiles)</AdditionalManifestFiles>
+    </Manifest>
+  </ItemDefinitionGroup>
+
+
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='*|x64'">
+    <PostBuildEvent>
+      <Message>Files Created in $(OutDir) and copied to $(InputDir)code\bin\pc</Message>
+      <Command>copy $(SolutionDir)cdc\bin\library\binkw64.dll $(TargetDir) /y
+copy $(SolutionDir)cdc\bin\library\bink2w64.dll $(TargetDir) /y
+copy $(SolutionDir)cdc\bin\library\steam_api64.dll $(TargetDir) /y
+copy $(SolutionDir)cdc\3rdParty\VXGI\dll\GFSDK_VXGI_x64.dll $(TargetDir) /y
+copy $(SolutionDir)cdc\3rdParty\VXGI\dll\GFSDK_SSAO_D3D11.win64.dll $(TargetDir) /y
+copy $(SolutionDir)cdc\3rdParty\VXGI\dll\d3dcompiler_47.dll $(TargetDir) /y
+copy $(SolutionDir)GeneratedData\NxApp\$(Platform)$(Configuration)\TRHD-PC-NxApp-$(TargetMode).dll $(InputDir)code\bin\pc\TRHD-PC-NxApp_$(TargetMode).dll /y
+copy $(TargetDir)\$(TargetName)$(TargetExt) $(InputDir)code\bin\pc\$(TargetName)$(TargetExt) /y
+copy $(OutDir)$(TargetName).map $(InputDir)code\bin\pc\$(TargetName).map /y
+copy $(OutDir)$(TargetName).pdb $(InputDir)code\bin\pc\$(TargetName).pdb /y</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+
+</Project>

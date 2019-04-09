@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{95D79E81-15BC-4C0A-A6F3-1DD6DF6F2C92}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>MsDevSlnVcxGenerator</RootNamespace>
+    <AssemblyName>MsDevSlnVcxGenerator</AssemblyName>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Glob\Glob.cs" />
+    <Compile Include="Glob\GlobExtensions.cs" />
+    <Compile Include="Glob\GlobNode.cs" />
+    <Compile Include="Glob\GlobOptions.cs" />
+    <Compile Include="Glob\Matcher.cs" />
+    <Compile Include="Glob\Parser.cs" />
+    <Compile Include="Glob\Scanner.cs" />
+    <Compile Include="Glob\Token.cs" />
+    <Compile Include="Glob\TokenKind.cs" />
+    <Compile Include="MsDevProject.cs" />
+    <Compile Include="MsDevProject.Filters.cs" />
+    <Compile Include="MsDevProject.Source.cs" />
+    <Compile Include="MsDevProject.Platform.cs" />
+    <Compile Include="MsDevProject.UnityBuild.cs" />
+    <Compile Include="MsDevProject.Utils.cs" />
+    <Compile Include="MsDevSolution.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="TRHD\Generate-TR2-PC.xml" />
+    <Content Include="TRHD\Generate-TRAE-Orbis.xml" />
+    <Content Include="TRHD\Generate-TRHD-Durango.xml" />
+    <Content Include="TRHD\Generate-TRHD-Orbis.xml" />
+    <Content Include="TRHD\Generate-TRHD-PC.xml" />
+    <Content Include="TRHD\MsDevProject-3rdparty-ATIAGS-Package.xml" />
+    <Content Include="TRHD\MsDevProject-3rdparty-Bink-Package.xml" />
+    <Content Include="TRHD\MsDevProject-3rdparty-Cerberus-Package.xml" />
+    <Content Include="TRHD\MsDevProject-3rdparty-FMOD-Package.xml" />
+    <Content Include="TRHD\MsDevProject-3rdparty-NvApi-Package.xml" />
+    <Content Include="TRHD\MsDevProject-3rdparty-OnlineSuite-v5.1.34-Package.xml" />
+    <Content Include="TRHD\MsDevProject-3rdparty-OnlineSuite-v5.1.34-Project.xml" />
+    <Content Include="TRHD\MsDevProject-3rdparty-OnlineSuite-v5.1.37-Library.xml" />
+    <Content Include="TRHD\MsDevProject-3rdparty-OnlineSuite-v5.1.37-Package.xml" />
+    <Content Include="TRHD\MsDevProject-3rdparty-OnlineSuite-v5.1.37-Project.xml" />
+    <Content Include="TRHD\MsDevProject-3rdparty-PureHair-Package.xml" />
+    <Content Include="TRHD\MsDevProject-3rdparty-Raknet-Library.xml" />
+    <Content Include="TRHD\MsDevProject-3rdparty-Raknet-Package.xml" />
+    <Content Include="TRHD\MsDevProject-3rdparty-Scaleform-Package.xml" />
+    <Content Include="TRHD\MsDevProject-3rdparty-Steam-Package.xml" />
+    <Content Include="TRHD\MsDevProject-3rdparty-Talea-Package.xml" />
+    <Content Include="TRHD\MsDevProject-3rdparty-Talea-Project.xml" />
+    <Content Include="TRHD\MsDevProject-3rdparty-Twitch-Package.xml" />
+    <Content Include="TRHD\MsDevProject-3rdparty-VXGI-Library.xml" />
+    <Content Include="TRHD\MsDevProject-3rdparty-VXGI-Package.xml" />
+    <Content Include="TRHD\MsDevProject-CompileSettings.xml" />
+    <Content Include="TRHD\MsDevProject-Default.xml" />
+    <Content Include="TRHD\MsDevProject-LinkSettings.xml" />
+    <Content Include="TRHD\MsDevProject-Merge-Settings.xml" />
+    <Content Include="TRHD\MsDevProject-ProjectConfigs.xml" />
+    <Content Include="TRHD\MsDevProject-Reference.xml" />
+    <Content Include="TRHD\MsDevProject-SDK-Durango.xml" />
+    <Content Include="TRHD\MsDevProject-SDK-Orbis.xml" />
+    <Content Include="TRHD\MsDevProject-SDK-x64.xml" />
+    <Content Include="TRHD\MsDevProject-TR2-CDC-Package.xml" />
+    <Content Include="TRHD\MsDevProject-TR2-CDC-Project.xml" />
+    <Content Include="TRHD\MsDevProject-TR2-DTP-Package.xml" />
+    <Content Include="TRHD\MsDevProject-TR2-DTP-Project.xml" />
+    <Content Include="TRHD\MsDevProject-TR2-Game.xml" />
+    <Content Include="TRHD\MsDevProject-TR2-NxShaders-Package.xml" />
+    <Content Include="TRHD\MsDevProject-TR2-NxShaders-Project-Durango.xml" />
+    <Content Include="TRHD\MsDevProject-TR2-NxShaders-Project-Orbis.xml" />
+    <Content Include="TRHD\MsDevProject-TR2-NxShaders-Project-x64.xml" />
+    <Content Include="TRHD\MsDevProject-TR2-NxShaders-Project.xml" />
+    <Content Include="TRHD\MsDevProject-TR2-Script-Package.xml" />
+    <Content Include="TRHD\MsDevProject-TR2-Script-Project.xml" />
+    <Content Include="TRHD\MsDevProject-TRAE-CompileSettings.xml" />
+    <Content Include="TRHD\MsDevProject-TRAE-Default.xml" />
+    <Content Include="TRHD\MsDevProject-TRAE-Durango.xml" />
+    <Content Include="TRHD\MsDevProject-TRAE-EventDLLs-Library-x64.xml" />
+    <Content Include="TRHD\MsDevProject-TRAE-Orbis.xml" />
+    <Content Include="TRHD\MsDevProject-TRAE-Shaders-Library-x64.xml" />
+    <Content Include="TRHD\MsDevProject-TRAE-Source-Library-x64.xml" />
+    <Content Include="TRHD\MsDevProject-TRAE-Source-Library.xml" />
+    <Content Include="TRHD\MsDevProject-TRAE-x64.xml" />
+    <Content Include="TRHD\MsDevProject-Type-Application.xml" />
+    <Content Include="TRHD\MsDevProject-Type-StaticLibrary.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

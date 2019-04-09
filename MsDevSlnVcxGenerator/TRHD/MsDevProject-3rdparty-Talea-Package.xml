@@ -1,0 +1,10 @@
+﻿<Project>
+  <PropertyGroup Label="Globals">
+    <TaleaVersion>3.3.91</TaleaVersion>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="*">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(SolutionDir)cdc\3rdParty\Talea\src\</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+</Project>

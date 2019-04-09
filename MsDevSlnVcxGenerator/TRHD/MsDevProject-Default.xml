@@ -1,0 +1,35 @@
+﻿<Project>
+	<UsingTask TaskName="NxCompiler.Compiler" AssemblyFile="NxCompiler.dll"/>
+	<ItemGroup Label="ProjectConfigurations">
+		<ProjectConfiguration Include="${CONFIGURATION}|${PLATFORM}">
+			<Configuration>${CONFIGURATION}</Configuration>
+			<Platform>${PLATFORM}</Platform>
+		</ProjectConfiguration>
+	</ItemGroup>
+	<PropertyGroup Label="Globals">
+		<ProjectGuid>${PROJECT_GUID}</ProjectGuid>
+		<RootNamespace>TRHD</RootNamespace>
+	</PropertyGroup>
+	<Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='${CONFIGURATION}|${PLATFORM}'" Label="Configuration">
+	</PropertyGroup>
+	<Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+	<ImportGroup Label="ExtensionSettings">
+	</ImportGroup>
+	<PropertyGroup Label="UserMacros">
+	</PropertyGroup>
+	<PropertyGroup Label="General">
+	</PropertyGroup>
+	<PropertyGroup Label="SDK">
+	</PropertyGroup>
+	<ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='${CONFIGURATION}|${PLATFORM}'">
+		<ClCompile />
+		<Link />
+		<Lib />
+	</ItemDefinitionGroup>
+	<ItemGroup Label="Source" />
+	<ItemGroup Label="ProjectReferences" />
+	<Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+	<ImportGroup Label="ExtensionTargets" />
+	<ItemGroup Label="SDKReferences" />
+</Project>

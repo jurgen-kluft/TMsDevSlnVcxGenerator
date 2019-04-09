@@ -1,0 +1,82 @@
+﻿<Project>
+  <PropertyGroup Label="Globals">
+    <CerberusVersion>3.3.91</CerberusVersion>
+  </PropertyGroup>
+
+  <ItemDefinitionGroup Condition="*">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(SolutionDir)cdc\3rdParty\Cerberus\include\</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='{Debug,Dev,Release,Profile}|*'">
+    <ClCompile>
+      <PreprocessorDefinitions>CDC_ENABLE_CERBERUS=0</PreprocessorDefinitions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='{QA,Final}|*'">
+    <ClCompile>
+      <PreprocessorDefinitions>CDC_ENABLE_CERBERUS=0</PreprocessorDefinitions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='*|{x64,Durango}'">
+    <Link>
+      <AdditionalDependencies>Cerberus.lib</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='*|ORBIS'">
+    <Link>
+      <AdditionalDependencies>Cerberus.a</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Link>
+      <AdditionalLibraryDirectories>$(SolutionDir)cdc\3rdParty\Cerberus\lib\x64\VS2012\Debug\md</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Durango'">
+    <Link>
+      <AdditionalLibraryDirectories>$(SolutionDir)cdc\3rdParty\Cerberus\lib\Durango\VS2012\Debug\md</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ORBIS'">
+    <Link>
+      <AdditionalLibraryDirectories>$(SolutionDir)cdc\3rdParty\Cerberus\lib\ORBIS\VS2012\Debug\md</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='{Dev,Release,Profile}|x64'">
+    <Link>
+      <AdditionalLibraryDirectories>$(SolutionDir)cdc\3rdParty\Cerberus\lib\x64\VS2012\Release\md</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='{Dev,Release,Profile}|Durango'">
+    <Link>
+      <AdditionalLibraryDirectories>$(SolutionDir)cdc\3rdParty\Cerberus\lib\Durango\VS2012\Release\md</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='{Dev,Release,Profile}|ORBIS'">
+    <Link>
+      <AdditionalLibraryDirectories>$(SolutionDir)cdc\3rdParty\Cerberus\lib\ORBIS\VS2012\Release\md</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='{QA,Final}|x64'">
+    <Link>
+      <AdditionalLibraryDirectories>$(SolutionDir)cdc\3rdParty\Cerberus\lib\x64\VS2012\Final\md</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='{QA,Final}|Durango'">
+    <Link>
+      <AdditionalLibraryDirectories>$(SolutionDir)cdc\3rdParty\Cerberus\lib\Durango\VS2012\Final\md</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='{QA,Final}|ORBIS'">
+    <Link>
+      <AdditionalLibraryDirectories>$(SolutionDir)cdc\3rdParty\Cerberus\lib\ORBIS\VS2012\Final\md</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+
+</Project>

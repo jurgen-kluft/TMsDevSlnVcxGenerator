@@ -1,0 +1,15 @@
+﻿<Project>
+  <PropertyGroup Label="General">
+    <OutDir>GeneratedData\Talea\$(Platform)$(Configuration)\</OutDir>
+    <IntDir>GeneratedData\Talea\$(Platform)$(Configuration).temp\</IntDir>
+  </PropertyGroup>
+
+  <ItemGroup Label="Source">
+    <ClCompile Include="SCAN->$(SolutionDir)cdc\3rdparty\Talea\src\**\*.cpp" />
+    <ClInclude Include="SCAN->$(SolutionDir)cdc\3rdparty\Talea\src\**\*.h" />
+    <ClCompile UnityBuild="$(SolutionDir)cdc\3rdparty\Talea\src\**\Conglomerate_*.cpp" />
+  </ItemGroup>
+
+  <Include>MsDevProject-3rdparty-Talea-Package.xml</Include>
+
+</Project>

@@ -1,0 +1,12 @@
+﻿<Project>
+  <ItemGroup Label="SDKReferences">
+    <SDKReference Condition="'$(Platform)'=='Durango'" Include="Xbox Services API, Version=8.0" />
+  </ItemGroup>
+
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='*|Durango'">
+    <ClCompile>
+      <CompileAsWinRT>true</CompileAsWinRT>
+    </ClCompile>
+  </ItemDefinitionGroup>
+
+</Project>

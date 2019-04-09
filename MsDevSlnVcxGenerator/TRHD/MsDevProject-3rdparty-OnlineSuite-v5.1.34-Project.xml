@@ -1,0 +1,33 @@
+﻿<Project>
+
+  <PropertyGroup Label="General">
+    <OutDir>GeneratedData\OnlineSuite\$(Platform)$(Configuration)\</OutDir>
+    <IntDir>GeneratedData\OnlineSuite\$(Platform)$(Configuration).temp\</IntDir>
+  </PropertyGroup>
+
+  <ItemGroup Label="Source">
+    <CustomBuild Include="cdc\runtime\OnlineSuite\GenerateOTCFG.otcfg">
+      <Outputs Condition="'$(Configuration)|$(Platform)'!='None|None'">$(SolutionDir)GeneratedData\OnlineSuite\$(Platform)$(Configuration)\cdc\runtime\otcfg\otcfg.h</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'!='None|None'">Generate OTCFG.h for Online Suite</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'!='None|None'">call $(SolutionDir)cdc\3rdParty\OnlineSuite\v5.1.34\otcfg\otcfg.bat Nothing $(Platform)$(Configuration) "$(Platform)" $(SolutionDir)GeneratedData\OnlineSuite\$(Platform)$(Configuration)\cdc\runtime\otcfg\</Command>
+    </CustomBuild>
+
+    <ClInclude Include="SCAN->$(SolutionDir)cdc\3rdParty\OnlineSuite\v5.1.34\otcfg\**\*.h" />
+    <ClCompile Include="SCAN->$(SolutionDir)cdc\3rdParty\OnlineSuite\v5.1.34\otcfg\**\*.cpp">
+      <Warnings Condition="'$(Platform)'=='x64'">TurnOffAllWarnings</Warnings>
+      <Warnings Condition="'$(Platform)'=='Durango'">TurnOffAllWarnings</Warnings>
+      <Warnings Condition="'$(Platform)'=='ORBIS'">WarningsOff</Warnings>
+    </ClCompile>
+
+    <ClCompile Remove="$(SolutionDir)cdc\3rdParty\OnlineSuite\v5.1.34\otcfg\**\gameinterfaceandroid.cpp" />
+    <ClCompile Remove="$(SolutionDir)cdc\3rdParty\OnlineSuite\v5.1.34\otcfg\**\gameinterfaceios.cpp" />
+    <ClCompile Remove="$(SolutionDir)cdc\3rdParty\OnlineSuite\v5.1.34\otcfg\**\gameinterfacelinux.cpp" />
+    <ClCompile Remove="$(SolutionDir)cdc\3rdParty\OnlineSuite\v5.1.34\otcfg\**\gameinterfaceonlive.cpp" />
+    <ClCompile Remove="$(SolutionDir)cdc\3rdParty\OnlineSuite\v5.1.34\otcfg\**\gameinterfaceosx.cpp" />
+    <ClCompile Remove="$(SolutionDir)cdc\3rdParty\OnlineSuite\v5.1.34\otcfg\**\gameinterfaceps3.cpp" />
+    <ClCompile Remove="$(SolutionDir)cdc\3rdParty\OnlineSuite\v5.1.34\otcfg\**\gameinterfacexbox360.cpp" />
+  </ItemGroup>
+
+  <Include>MsDevProject-3rdparty-OnlineSuite-v5.1.34-Package.xml</Include>
+
+</Project>

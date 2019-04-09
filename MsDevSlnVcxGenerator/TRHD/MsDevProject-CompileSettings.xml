@@ -1,0 +1,110 @@
+﻿<Project>
+  <ItemDefinitionGroup Condition="*">
+    <ClCompile>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <WarningLevel>Level3</WarningLevel>
+      <CompileAs>CompileAsCpp</CompileAs>
+    </ClCompile>
+  </ItemDefinitionGroup>
+
+  <ItemDefinitionGroup Condition="*">
+    <ClCompile>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+
+
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='*|x64'">
+    <ClCompile>
+      <ObjectFileName>$(IntDir)%(Filename).obj</ObjectFileName>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <WarningLevel>Level3</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <EnableEnhancedInstructionSet>AdvancedVectorExtensions</EnableEnhancedInstructionSet>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <Optimization>MinSpace</Optimization>
+    </ClCompile>
+  </ItemDefinitionGroup>
+
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='*|ORBIS'">
+    <ClCompile>
+      <ObjectFileName>$(IntDir)%(Filename).o</ObjectFileName>
+      <OptimizationLevel>Level2</OptimizationLevel>
+      <WarningsAsErrors>true</WarningsAsErrors>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ORBIS'">
+    <ClCompile>
+      <OptimizationLevel>Level0</OptimizationLevel>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='*|ORBIS'">
+    <ClCompile>
+      <AdditionalOptions>-Wno-reorder</AdditionalOptions>
+      <AdditionalOptions>-Wno-unknown-pragmas</AdditionalOptions>
+      <AdditionalOptions>-Wno-c++11-narrowing</AdditionalOptions>
+      <AdditionalOptions>-Wno-int-to-pointer-cast</AdditionalOptions>
+      <AdditionalOptions>-Wno-conversion</AdditionalOptions>
+      <AdditionalOptions>-Wno-tautological-compare</AdditionalOptions>
+      <AdditionalOptions>-Wno-missing-declarations</AdditionalOptions>
+      <AdditionalOptions>-Wno-unused-variable</AdditionalOptions>
+      <AdditionalOptions>-Wno-unused-function</AdditionalOptions>
+      <AdditionalOptions>-Wno-comment</AdditionalOptions>
+      <AdditionalOptions>-Wno-switch</AdditionalOptions>
+      <AdditionalOptions>-Wno-switch-enum</AdditionalOptions>
+      <AdditionalOptions>-Wno-logical-op-parentheses</AdditionalOptions>
+      <AdditionalOptions>-Wno-overloaded-virtual</AdditionalOptions>
+      <AdditionalOptions>-Wno-self-assign</AdditionalOptions>
+      <AdditionalOptions>-Wno-unused-private-field</AdditionalOptions>
+      <AdditionalOptions>-Wno-sometimes-uninitialized</AdditionalOptions>
+      <AdditionalOptions>-Wno-non-pod-varargs</AdditionalOptions>
+      <AdditionalOptions>-Wno-deprecated-writable-strings</AdditionalOptions>
+      <AdditionalOptions>-Wno-extra-tokens</AdditionalOptions>
+      <AdditionalOptions>-Wno-parentheses-equality</AdditionalOptions>
+      <AdditionalOptions>-Wno-format</AdditionalOptions>
+      <AdditionalOptions>-Wno-null-character</AdditionalOptions>
+      <AdditionalOptions>-Wno-inconsistent-missing-override</AdditionalOptions>
+      <AdditionalOptions>-Wno-unused-local-typedef</AdditionalOptions>
+      <AdditionalOptions>-Wno-deprecated-register</AdditionalOptions>
+      <AdditionalOptions>-ferror-limit=0</AdditionalOptions>
+      <AdditionalOptions>%(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='*|Durango'">
+    <ClCompile>
+      <ObjectFileName>$(IntDir)%(Filename).obj</ObjectFileName>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <Optimization>MaxSpeed</Optimization>
+      <WarningLevel>Level3</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <EnableEnhancedInstructionSet>AdvancedVectorExtensions</EnableEnhancedInstructionSet>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Durango'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+    </ClCompile>
+  </ItemDefinitionGroup>
+
+</Project>

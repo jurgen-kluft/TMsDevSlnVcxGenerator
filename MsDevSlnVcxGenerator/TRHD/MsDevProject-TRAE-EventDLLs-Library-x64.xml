@@ -1,0 +1,6 @@
+﻿<Project>
+  <ItemGroup Label="Source">
+    <ClCompile Include="SCAN->EventDlls\**\*.{c,cpp}" />
+    <ClInclude Include="SCAN->EventDlls\**\*.{h,hpp}" />
+  </ItemGroup>
+</Project>

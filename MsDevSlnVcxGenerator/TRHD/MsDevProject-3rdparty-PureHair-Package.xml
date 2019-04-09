@@ -1,0 +1,56 @@
+﻿<Project>
+  <PropertyGroup Label="Globals">
+    <PurehairVersion>3.3.91</PurehairVersion>
+  </PropertyGroup>
+  <ItemGroup Label="Source">
+    <ClInclude Include="SCAN->$(SolutionDir)cdc\3rdparty\Labs\include\**\*.h" />
+  </ItemGroup>
+
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='{Release,Profile,QA,Final}|*'">
+    <ClCompile>
+      <PreprocessorDefinitions>PURE_RETAIL=1</PreprocessorDefinitions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+
+  <ItemDefinitionGroup Condition="*">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(SolutionDir)cdc\3rdParty\Labs\include</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Link>
+      <AdditionalDependencies>$(SolutionDir)cdc\3rdParty\Labs\Lib\x64\2017\PureHair_d.lib</AdditionalDependencies>
+      <AdditionalDependencies>$(SolutionDir)cdc\3rdParty\Labs\Lib\x64\2017\PureCore_d.lib</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='{Dev,Release,Profile,QA,Final}|x64'">
+    <Link>
+      <AdditionalDependencies>$(SolutionDir)cdc\3rdParty\Labs\Lib\x64\2017\PureHair_r.lib</AdditionalDependencies>
+      <AdditionalDependencies>$(SolutionDir)cdc\3rdParty\Labs\Lib\x64\2017\PureCore_r.lib</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Durango'">
+    <Link>
+      <AdditionalDependencies>$(SolutionDir)cdc\3rdParty\Labs\Lib\Durango\2017\PureHair_d.lib</AdditionalDependencies>
+      <AdditionalDependencies>$(SolutionDir)cdc\3rdParty\Labs\Lib\Durango\2017\PureCore_d.lib</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='{Dev,Release,Profile,QA,Final}|Durango'">
+    <Link>
+      <AdditionalDependencies>$(SolutionDir)cdc\3rdParty\Labs\Lib\Durango\2017\PureHair_r.lib</AdditionalDependencies>
+      <AdditionalDependencies>$(SolutionDir)cdc\3rdParty\Labs\Lib\Durango\2017\PureCore_r.lib</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ORBIS'">
+    <Link>
+      <AdditionalDependencies>$(SolutionDir)cdc\3rdParty\Labs\Lib\ORBIS\PureHair_d.a</AdditionalDependencies>
+      <AdditionalDependencies>$(SolutionDir)cdc\3rdParty\Labs\Lib\ORBIS\PureCore_d.a</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='{Dev,Release,Profile,QA,Final}|ORBIS'">
+    <Link>
+      <AdditionalDependencies>$(SolutionDir)cdc\3rdParty\Labs\Lib\ORBIS\PureHair_r.a</AdditionalDependencies>
+      <AdditionalDependencies>$(SolutionDir)cdc\3rdParty\Labs\Lib\ORBIS\PureCore_r.a</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+</Project>

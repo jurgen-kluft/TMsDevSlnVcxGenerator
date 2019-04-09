@@ -1,0 +1,24 @@
+﻿<Project>
+  <PropertyGroup Label="Globals">
+    <SteamVersion>135a</SteamVersion>
+  </PropertyGroup>
+
+  <ItemGroup Label="Source">
+    <ClInclude Include="SCAN->$(SolutionDir)cdc\3rdParty\steamworks_sdk_135a\sdk\public\steam\*.h"/>
+  </ItemGroup>
+
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='*|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(SolutionDir)cdc\3rdParty\steamworks_sdk_135a\sdk\public\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)cdc\3rdParty\steamworks_sdk_135a\sdk\public\steam\</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(SolutionDir)cdc\3rdParty\steamworks_sdk_135a\sdk\redistributable_bin\win64\</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)cdc\3rdParty\steamworks_sdk_135a\sdk\public\steam\lib\win64\</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories></AdditionalLibraryDirectories>
+      <AdditionalDependencies>steam_api64.lib</AdditionalDependencies>
+      <AdditionalDependencies>sdkencryptedappticket64.lib</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+
+</Project>

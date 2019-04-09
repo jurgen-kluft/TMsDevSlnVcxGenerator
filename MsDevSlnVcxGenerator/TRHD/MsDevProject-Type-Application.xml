@@ -1,0 +1,45 @@
+﻿<Project>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='*|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <TargetExt>.exe</TargetExt>
+    <EmbedManifest>false</EmbedManifest>
+    <GenerateManifest>false</GenerateManifest>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='*|Durango'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <TargetExt>.exe</TargetExt>
+    <EmbedManifest>false</EmbedManifest>
+    <GenerateManifest>false</GenerateManifest>
+    <DeployMode>Pull</DeployMode>
+    <IsolateConfigurationsOnDeploy>true</IsolateConfigurationsOnDeploy>
+    <RemoveExtraDeployFiles>true</RemoveExtraDeployFiles>
+    <LayoutDir>code\bin\$(Platform)\Layout</LayoutDir>
+    <LayoutExtensionFilter>*.pdb;*.ilk;*.exp;*.lib;*.winmd;*.appxrecipe;*.pri;*.map</LayoutExtensionFilter>
+  </PropertyGroup>
+
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='*|x64'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+    </ClCompile>
+  </ItemDefinitionGroup>
+
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+    </ClCompile>
+  </ItemDefinitionGroup>
+
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='*|Durango'">
+    <ClCompile>
+      <CompileAsWinRT>true</CompileAsWinRT>
+    </ClCompile>
+  </ItemDefinitionGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='*|ORBIS'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <TargetExt>.elf</TargetExt>
+  </PropertyGroup>
+
+</Project>

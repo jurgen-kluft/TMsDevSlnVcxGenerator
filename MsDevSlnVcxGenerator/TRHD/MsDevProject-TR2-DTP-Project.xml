@@ -1,0 +1,103 @@
+﻿<Project>
+  <UsingTask TaskName="NxCompiler.Compiler" AssemblyFile="NxCompiler.dll"/>
+  <PropertyGroup Label="Globals">
+    <DtpVersion>1.0</DtpVersion>
+  </PropertyGroup>
+  <Target Name="DtpCompile" BeforeTargets="Lib;Link" Outputs="%(DtpCompile.Build)">
+    <Compiler Module="DtpHeaderGenerator" Root="$(SolutionDir)" IntDir="$(IntDir)" OutDir="$(OutDir)" Platform="$(Platform)" Config="$(Configuration)" Sources="@(DtpCompile)" Options="e" IncludePaths="$(SolutionDir)cdc\dtp\;$(SolutionDir)code\dtp\" Condition="'%(DtpCompile.Build)'=='true'" />
+  </Target>
+  <PropertyGroup Label="General">
+    <DisableFastUpToDateCheck>true</DisableFastUpToDateCheck>
+    <OutDir>GeneratedData\DTP\$(Platform)$(Configuration)\</OutDir>
+    <IntDir>GeneratedData\DTP\$(Platform)$(Configuration).temp\</IntDir>
+  </PropertyGroup>
+  <ItemGroup Label="Source">
+    <DtpCompile Include="SCAN->cdc\dtp\**\*.{dtp,dtpinc}">
+      <Build>true</Build>
+    </DtpCompile>
+    <DtpCompile Include="SCAN-NDFN->code\dtp\**\*.{dtp,dtpinc}">
+      <Build>true</Build>
+    </DtpCompile>
+    <DtpCompile Include="cdc\dtp\gamevalue.dtpinc">
+      <Build>false</Build>
+    </DtpCompile>
+    <DtpCompile Include="cdc\dtp\animationpipeline.dtp">
+      <Build>false</Build>
+    </DtpCompile>
+    <DtpCompile Include="cdc\dtp\materialtype.dtp">
+      <Build>false</Build>
+    </DtpCompile>
+    <DtpCompile Include="cdc\dtp\ObjectTypes\UberObjectStateGraphEx.dtpinc">
+      <Build>false</Build>
+    </DtpCompile>
+    <DtpCompile Include="cdc\dtp\objectproperties\collectionref.dtp">
+      <Build>false</Build>
+    </DtpCompile>
+    <DtpCompile Include="cdc\dtp\ObjectProperties\Mesh.dtp">
+      <Build>false</Build>
+    </DtpCompile>
+    <DtpCompile Include="cdc\dtp\ObjectProperties\MeshOverrides.dtpinc">
+      <Build>false</Build>
+    </DtpCompile>
+    <DtpCompile Include="cdc\dtp\barkdata.dtpinc">
+      <Build>false</Build>
+    </DtpCompile>
+    <DtpCompile Include="cdc\dtp\cdcMaterial.dtp">
+      <Build>false</Build>
+    </DtpCompile>
+    <DtpCompile Include="cdc\dtp\Examples\curve.dtp">
+      <Build>false</Build>
+    </DtpCompile>
+    <DtpCompile Include="cdc\dtp\Examples\ExampleGraph.dtp">
+      <Build>false</Build>
+    </DtpCompile>
+    <DtpCompile Include="cdc\dtp\Examples\ExampleStateGraph.dtp">
+      <Build>false</Build>
+    </DtpCompile>
+    <DtpCompile Include="cdc\dtp\bonesetenum.dtpinc">
+      <Build>false</Build>
+    </DtpCompile>
+    <DtpCompile Include="cdc\dtp\fxfxi.dtp">
+      <Build>false</Build>
+    </DtpCompile>
+    <DtpCompile Include="cdc\dtp\fxinternal.dtpinc">
+      <Build>false</Build>
+    </DtpCompile>
+    <DtpCompile Include="cdc\dtp\materialnodegraph.dtpinc">
+      <Build>false</Build>
+    </DtpCompile>
+    <DtpCompile Include="cdc\dtp\materialnodegraph.dtp">
+      <Build>false</Build>
+    </DtpCompile>
+    <DtpCompile Include="cdc\dtp\modeltype.dtp">
+      <Build>false</Build>
+    </DtpCompile>
+    <DtpCompile Include="cdc\dtp\vertexgraph.dtp">
+      <Build>false</Build>
+    </DtpCompile>
+    <DtpCompile Include="code\dtp\ObjectTypes\POswarm.dtp">
+      <Build>false</Build>
+    </DtpCompile>
+    <DtpCompile Include="code\dtp\barktypes.dtpinc">
+      <Build>false</Build>
+    </DtpCompile>
+    <DtpCompile Include="code\dtp\ObjectTypes\POAnimatedSimple.dtp">
+      <Build>false</Build>
+    </DtpCompile>
+    <DtpCompile Include="code\dtp\ObjectTypes\PODoorPlayer.dtp">
+      <Build>false</Build>
+    </DtpCompile>
+    <DtpCompile Include="code\dtp\ObjectTypes\poflammable.dtp">
+      <Build>false</Build>
+    </DtpCompile>
+    <DtpCompile Include="code\dtp\ObjectTypes\POlightable.dtp">
+      <Build>false</Build>
+    </DtpCompile>
+    <DtpCompile Include="code\dtp\ObjectTypes\POProjectile.dtp">
+      <Build>false</Build>
+    </DtpCompile>
+    <DtpCompile Include="code\dtp\objecttypes\pobreakablestaticshared.dtpinc">
+      <Build>false</Build>
+    </DtpCompile>
+  </ItemGroup>
+</Project>

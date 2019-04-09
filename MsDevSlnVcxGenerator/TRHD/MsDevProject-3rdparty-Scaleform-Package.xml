@@ -1,0 +1,83 @@
+﻿<Project>
+  <PropertyGroup Label="Globals">
+    <ScaleformVersion>3.3.91</ScaleformVersion>
+  </PropertyGroup>
+
+  <ItemDefinitionGroup Condition="*">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(SolutionDir)cdc\3rdParty\GFx_SDK_3.3.91\include</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|*'">
+    <ClCompile>
+      <PreprocessorDefinitions>GFC_BUILD_DEBUG=1</PreprocessorDefinitions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Link>
+      <AdditionalDependencies>$(SolutionDir)cdc\3rdParty\GFx_SDK_3.3.91\3rdparty\libpng\Lib\x64\Msvc90\Debug\libpng.lib</AdditionalDependencies>
+      <AdditionalDependencies>$(SolutionDir)cdc\3rdParty\GFx_SDK_3.3.91\3rdparty\zlib-1.2.3\lib\x64\Msvc90\Debug\zlib.lib</AdditionalDependencies>
+      <AdditionalDependencies>$(SolutionDir)cdc\3rdParty\GFx_SDK_3.3.91\lib\x64\Msvc90\Debug\libgfx.lib</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='{Dev,Release,Profile}|x64'">
+    <Link>
+      <AdditionalDependencies>$(SolutionDir)cdc\3rdParty\GFx_SDK_3.3.91\3rdparty\libpng\Lib\x64\Msvc90\Release\libpng.lib</AdditionalDependencies>
+      <AdditionalDependencies>$(SolutionDir)cdc\3rdParty\GFx_SDK_3.3.91\3rdparty\zlib-1.2.3\lib\x64\Msvc90\Release\zlib.lib</AdditionalDependencies>
+      <AdditionalDependencies>$(SolutionDir)cdc\3rdParty\GFx_SDK_3.3.91\lib\x64\Msvc90\Release\libgfx.lib</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='{QA,Final}|x64'">
+    <Link>
+      <AdditionalDependencies>$(SolutionDir)cdc\3rdParty\GFx_SDK_3.3.91\3rdparty\libpng\Lib\x64\Msvc90\Release\libpng.lib</AdditionalDependencies>
+      <AdditionalDependencies>$(SolutionDir)cdc\3rdParty\GFx_SDK_3.3.91\3rdparty\zlib-1.2.3\lib\x64\Msvc90\Release\zlib.lib</AdditionalDependencies>
+      <AdditionalDependencies>$(SolutionDir)cdc\3rdParty\GFx_SDK_3.3.91\lib\x64\Msvc90\Shipping\libgfx.lib</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Durango'">
+    <Link>
+      <AdditionalDependencies>$(SolutionDir)cdc\3rdParty\GFx_SDK_3.3.91\3rdparty\libpng\Lib\Durango\Msvc110\debug\libpng.lib</AdditionalDependencies>
+      <AdditionalDependencies>$(SolutionDir)cdc\3rdParty\GFx_SDK_3.3.91\3rdparty\zlib-1.2.3\lib\Durango\Msvc110\Debug\zlib.lib</AdditionalDependencies>
+      <AdditionalDependencies>;$(SolutionDir)cdc\3rdParty\GFx_SDK_3.3.91\lib\Durango\Msvc110\Debug\2017\libgfx.lib</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='{Dev,Release,Profile}|Durango'">
+    <Link>
+      <AdditionalDependencies>$(SolutionDir)cdc\3rdParty\GFx_SDK_3.3.91\3rdparty\libpng\Lib\Durango\Msvc110\Release\libpng.lib</AdditionalDependencies>
+      <AdditionalDependencies>$(SolutionDir)cdc\3rdParty\GFx_SDK_3.3.91\3rdparty\zlib-1.2.3\lib\Durango\Msvc110\Release\zlib.lib</AdditionalDependencies>
+      <AdditionalDependencies>;$(SolutionDir)cdc\3rdParty\GFx_SDK_3.3.91\lib\Durango\Msvc110\Release\2017\libgfx.lib</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='{QA,Final}|Durango'">
+    <Link>
+      <AdditionalDependencies>$(SolutionDir)cdc\3rdParty\GFx_SDK_3.3.91\3rdparty\libpng\Lib\Durango\Msvc110\Release\libpng.lib</AdditionalDependencies>
+      <AdditionalDependencies>$(SolutionDir)cdc\3rdParty\GFx_SDK_3.3.91\3rdparty\zlib-1.2.3\lib\Durango\Msvc110\Release\zlib.lib</AdditionalDependencies>
+      <AdditionalDependencies>;$(SolutionDir)cdc\3rdParty\GFx_SDK_3.3.91\lib\Durango\Msvc110\Shipping\2017\libgfx.lib</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ORBIS'">
+    <Link>
+      <AdditionalDependencies>$(SolutionDir)cdc\3rdParty\GFx_SDK_3.3.91\3rdparty\libpng\Lib\PS4\debug\libpng.a</AdditionalDependencies>
+      <AdditionalDependencies>$(SolutionDir)cdc\3rdParty\GFx_SDK_3.3.91\3rdparty\zlib-1.2.3\lib\PS4\Debug\zlib.a</AdditionalDependencies>
+      <AdditionalDependencies>;$(SolutionDir)cdc\3rdParty\GFx_SDK_3.3.91\lib\PS4\Debug NoRTTI\libgfx.a</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='{Dev,Release,Profile}|ORBIS'">
+    <Link>
+      <AdditionalDependencies>$(SolutionDir)cdc\3rdParty\GFx_SDK_3.3.91\3rdparty\libpng\Lib\PS4\Release\libpng.a</AdditionalDependencies>
+      <AdditionalDependencies>$(SolutionDir)cdc\3rdParty\GFx_SDK_3.3.91\3rdparty\zlib-1.2.3\lib\PS4\Release\zlib.a</AdditionalDependencies>
+      <AdditionalDependencies>;$(SolutionDir)cdc\3rdParty\GFx_SDK_3.3.91\lib\PS4\Release NoRTTI\libgfx.a</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='{QA,Final}|ORBIS'">
+    <Link>
+      <AdditionalDependencies>$(SolutionDir)cdc\3rdParty\GFx_SDK_3.3.91\3rdparty\libpng\Lib\PS4\Release\libpng.a</AdditionalDependencies>
+      <AdditionalDependencies>$(SolutionDir)cdc\3rdParty\GFx_SDK_3.3.91\3rdparty\zlib-1.2.3\lib\PS4\Release\zlib.a</AdditionalDependencies>
+      <AdditionalDependencies>;$(SolutionDir)cdc\3rdParty\GFx_SDK_3.3.91\lib\PS4\Shipping NoRTTI\libgfx.a</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+</Project>

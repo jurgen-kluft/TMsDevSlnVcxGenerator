@@ -1,0 +1,17 @@
+﻿<Project>
+  <ItemGroup Label="Source">
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\BinkPS.nxshader" />
+    <NXShader Include="cdc\runtime\cdcRender\Common\Shaders\BinkVS.nxshader" />
+
+    <NXShader Include="SCAN->cdc\runtime\cdcRender\PCDX11\Shaders\templates\NGACommon*.nxShader">
+      <Options>/HDR</Options>
+    </NXShader>
+
+    <NXShader Include="**\*.nxshader">
+      <Options>/Durango</Options>
+    </NXShader>
+
+    <Lib Include="->$(OutDir)**\*.obj" />
+    
+  </ItemGroup>
+</Project>

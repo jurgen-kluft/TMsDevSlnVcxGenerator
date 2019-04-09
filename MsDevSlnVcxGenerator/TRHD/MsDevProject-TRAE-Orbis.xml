@@ -1,0 +1,46 @@
+﻿<Project>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='*|ORBIS'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(ProjectDir)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)dtp\output\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+
+      <PreprocessorDefinitions>CDC_ORBIS</PreprocessorDefinitions>
+
+      <CompileAs>CompileAsCpp</CompileAs>
+      <OptimizationLevel>Level2</OptimizationLevel>
+
+      <WarningLevel>Level3</WarningLevel>
+      <WarningsAsErrors>true</WarningsAsErrors>
+      <DisableSpecificWarnings>-Wno-unused-private-field</DisableSpecificWarnings>
+      <DisableSpecificWarnings>-Wno-unused-const-variable</DisableSpecificWarnings>
+      <DisableSpecificWarnings>-Wno-unused-variable</DisableSpecificWarnings>
+      <DisableSpecificWarnings>-Wno-unused-const-variable</DisableSpecificWarnings>
+      <DisableSpecificWarnings>-Wno-unused-function</DisableSpecificWarnings>
+      <DisableSpecificWarnings>-Wno-null-arithmetic</DisableSpecificWarnings>
+
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <SupportJustMyCode>false</SupportJustMyCode>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </ClCompile>
+    <Link>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>true</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ORBIS'">
+    <ClCompile>
+      <OptimizationLevel>Level0</OptimizationLevel>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Final|ORBIS'">
+    <ClCompile>
+      <OptimizationLevel>Level3</OptimizationLevel>
+    </ClCompile>
+  </ItemDefinitionGroup>
+</Project>

@@ -1,0 +1,75 @@
+﻿<Project>
+	<Merge>Match</Merge>
+	<PropertyGroup Label="Globals">
+		<Merge>MatchInsert</Merge>
+	</PropertyGroup>
+	<PropertyGroup Label="UserMacros">
+		<Merge>MatchInsert</Merge>
+	</PropertyGroup>
+	<PropertyGroup Label="General">
+		<Merge>MatchInsert</Merge>
+	</PropertyGroup>
+	<PropertyGroup Condition="*" Label="Configuration">
+		<Merge>MatchInsert</Merge>
+	</PropertyGroup>
+	<ItemGroup Label="ProjectConfigurations">
+		<ProjectConfiguration Include="*">
+			<Merge>MatchInsert</Merge>
+		</ProjectConfiguration>
+	</ItemGroup>
+	<PropertyGroup Label="SDK">
+		<Merge>MatchInsert</Merge>
+		<ReferencePath>JoinWithSemiColon</ReferencePath>
+		<LibraryPath>JoinWithSemiColon</LibraryPath>
+		<LibraryWPath>JoinWithSemiColon</LibraryWPath>
+		<IncludePath>JoinWithSemiColon</IncludePath>
+		<ExecutablePath>JoinWithSemiColon</ExecutablePath>
+	</PropertyGroup>
+	<ItemDefinitionGroup Condition="*">
+		<Merge>MatchInsert</Merge>
+		<ClCompile>
+			<PreprocessorDefinitions>JoinWithSemiColonSorted</PreprocessorDefinitions>
+			<AdditionalIncludeDirectories>JoinWithSemiColon</AdditionalIncludeDirectories>
+			<AdditionalUsingDirectories>JoinWithSemiColon</AdditionalUsingDirectories>
+			<AdditionalOptions>JoinWithSpace</AdditionalOptions>
+			<DisableSpecificWarnings>JoinWithSemiColon</DisableSpecificWarnings>
+		</ClCompile>
+		<Link>
+			<AdditionalLibraryDirectories>JoinWithSemiColon</AdditionalLibraryDirectories>
+			<AdditionalDependencies>JoinWithSemiColon</AdditionalDependencies>
+			<AdditionalOptions>JoinWithSpace</AdditionalOptions>
+		</Link>
+	</ItemDefinitionGroup>
+	<ItemGroup Label="Source">
+		<Merge>MatchInsert</Merge>
+		<CustomBuild Include="*">
+			<AdditionalInputs>JoinWithSemiColon</AdditionalInputs>
+			<Outputs>JoinWithSemiColon</Outputs>
+		</CustomBuild>
+		<NXShader Include="*">
+			<Options>JoinWithComma</Options>
+		</NXShader>
+	</ItemGroup>
+	<ItemGroup Label="ProjectReferences">
+		<Merge>MatchInsert</Merge>
+	</ItemGroup>
+	<ImportGroup Label="ExtensionSettings">
+		<Merge>MatchInsert</Merge>
+	</ImportGroup>
+	<ImportGroup Label="ExtensionTargets">
+		<Merge>MatchInsert</Merge>
+	</ImportGroup>
+	<ItemGroup Label="SDKReferences">
+		<Merge>MatchInsert</Merge>
+	</ItemGroup>
+
+	<Merge>MatchInsert</Merge>
+	<UsingTask TaskName="*" AssemblyFile="*">
+		<Merge>MatchInsert</Merge>
+	</UsingTask>
+	<Target Name="*">
+		<Merge>MatchInsert</Merge>
+	</Target>
+	<Merge>Match</Merge>
+
+</Project>

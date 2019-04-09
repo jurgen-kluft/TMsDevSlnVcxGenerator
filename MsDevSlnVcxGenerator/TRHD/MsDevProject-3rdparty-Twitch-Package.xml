@@ -1,0 +1,28 @@
+﻿<Project>
+  <PropertyGroup Label="Globals">
+    <TwitchVersion></TwitchVersion>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="*">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(SolutionDir)cdc\3rdParty\Twitch\twitchcore\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)cdc\3rdParty\Twitch\twitchchat\include</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>CDC_USE_TWITCH=1</PreprocessorDefinitions>
+      <PreprocessorDefinitions>CDC_USE_LIVESTREAMING=1</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(SolutionDir)cdc\3rdParty\Twitch\twitchchat\lib\2017</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|*'">
+    <Link>
+      <AdditionalDependencies>twitchcore_$(Platform)_Debug.lib</AdditionalDependencies>
+      <AdditionalDependencies>twitchchat_$(Platform)_Debug.lib</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='{Dev,Release,Profile,QA,Final}}|*'">
+    <Link>
+      <AdditionalDependencies>twitchcore_$(Platform)_Release.lib</AdditionalDependencies>
+      <AdditionalDependencies>twitchchat_$(Platform)_Release.lib</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+</Project>

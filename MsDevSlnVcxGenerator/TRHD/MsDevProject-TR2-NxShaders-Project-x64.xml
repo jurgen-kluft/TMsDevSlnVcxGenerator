@@ -1,0 +1,11 @@
+﻿<Project>
+  <ItemGroup Label="Source">
+    <NXShader Include="SCAN->cdc\runtime\cdcRender\PCDX11\Shaders\templates\NGACommon*.nxShader">
+      <Options>/HDR</Options>
+    </NXShader>
+    <NXShader Include="**\*.nxshader">
+      <Options>/PCDX11,/64</Options>
+    </NXShader>
+    <Lib Include="->$(OutDir)**\*.obj" />
+  </ItemGroup>
+</Project>

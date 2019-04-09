@@ -1,0 +1,33 @@
+﻿<Project>
+  <PropertyGroup Label="Globals">
+    <BinkVersion>2015-07-15, 2.5f</BinkVersion>
+  </PropertyGroup>
+
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='*|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(SolutionDir)cdc\runtime\cdcMovie\win32\</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='*|x64'">
+    <Link>
+      <AdditionalLibraryDirectories>$(SolutionDir)cdc\runtime\cdcMovie\win32\</AdditionalLibraryDirectories>
+      <AdditionalDependencies>bink2w64.lib</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='*|Durango'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(SolutionDir)cdc\runtime\cdcMovie\Durango\</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='*|Durango'">
+    <Link>
+      <AdditionalLibraryDirectories>$(SolutionDir)cdc\runtime\cdcMovie\Durango\</AdditionalLibraryDirectories>
+      <AdditionalDependencies>Bink2Durango.lib</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+
+
+  <Comment>ORBIS/PS4 does not use Bink, but uses AvPlayer</Comment>
+
+</Project>

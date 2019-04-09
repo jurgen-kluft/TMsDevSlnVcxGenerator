@@ -1,0 +1,69 @@
+﻿<Project>
+  <ItemGroup Label="Source">
+    
+    <CustomBuild Include="SCAN->game\pc\Shaders\*.{vsh,psh}">
+      <FileType>Document</FileType>
+      <Command>cmd.exe /c $(ProjectDir)tools\cvshadpc.bat "$(ProjectDir)%(RelativeDir)%(Filename)%(Extension)" "$(OutDir)%(RelativeDir)%(Filename).obj" %(Filename) win64</Command>
+      <Outputs>$(OutDir)%(RelativeDir)%(Filename).obj</Outputs>
+      <Message>Compile Shader %(Filename)</Message>
+    </CustomBuild>
+    
+    <CustomBuild Include="SCAN->cdc\runtime\cdcRender\pc\Shaders\*PassLight*.nxShader">
+      <FileType>Document</FileType>
+      <Command>$(ProjectDir)cdc/bin/NxShaderBuilder.exe $(ProjectDir)%(RelativeDir)%(Filename).nxShader /PC /HDR /Win64</Command>
+      <Outputs>$(ProjectDir)%(RelativeDir)%(Filename).obj;$(ProjectDir)%(RelativeDir)%(Filename).h</Outputs>
+      <Message>NxShaderBuilder.exe %(Filename).nxShader /PC /HDR /Win64</Message>
+    </CustomBuild>
+
+    <CustomBuild Include="SCAN->cdc\runtime\cdcRender\pc\Shaders\AmbientPass*.nxShader">
+      <FileType>Document</FileType>
+      <Command>$(ProjectDir)cdc/bin/NxShaderBuilder.exe $(ProjectDir)%(RelativeDir)%(Filename).nxShader /PC /HASH /Win64</Command>
+      <Outputs>$(ProjectDir)%(RelativeDir)%(Filename).obj;$(ProjectDir)%(RelativeDir)%(Filename).h</Outputs>
+      <Message>NxShaderBuilder.exe %(Filename).nxShader /PC /HASH /Win64</Message>
+    </CustomBuild>
+    <CustomBuild Include="SCAN->cdc\runtime\cdcRender\pc\Shaders\ShadowMap*.nxShader">
+      <FileType>Document</FileType>
+      <Command>$(ProjectDir)cdc/bin/NxShaderBuilder.exe $(ProjectDir)%(RelativeDir)%(Filename).nxShader /PC /HASH /Win64</Command>
+      <Outputs>$(ProjectDir)%(RelativeDir)%(Filename).obj;$(ProjectDir)%(RelativeDir)%(Filename).h</Outputs>
+      <Message>NxShaderBuilder.exe %(Filename).nxShader /PC /HASH /Win64</Message>
+    </CustomBuild>
+    <CustomBuild Include="SCAN->cdc\runtime\cdcRender\pc\Shaders\StencilPass*.nxShader">
+      <FileType>Document</FileType>
+      <Command>$(ProjectDir)cdc/bin/NxShaderBuilder.exe $(ProjectDir)%(RelativeDir)%(Filename).nxShader /PC /HASH /Win64</Command>
+      <Outputs>$(ProjectDir)%(RelativeDir)%(Filename).obj;$(ProjectDir)%(RelativeDir)%(Filename).h</Outputs>
+      <Message>NxShaderBuilder.exe %(Filename).nxShader /PC /HASH /Win64</Message>
+    </CustomBuild>
+    <CustomBuild Include="SCAN->cdc\runtime\cdcRender\pc\Shaders\zPass*.nxShader">
+      <FileType>Document</FileType>
+      <Command>$(ProjectDir)cdc/bin/NxShaderBuilder.exe $(ProjectDir)%(RelativeDir)%(Filename).nxShader /PC /HASH /Win64</Command>
+      <Outputs>$(ProjectDir)%(RelativeDir)%(Filename).obj;$(ProjectDir)%(RelativeDir)%(Filename).h</Outputs>
+      <Message>NxShaderBuilder.exe %(Filename).nxShader /PC /HASH /Win64</Message>
+    </CustomBuild>
+    <CustomBuild Include="cdc\runtime\cdcRender\pc\Shaders\DepthOfFieldPS.nxShader">
+      <FileType>Document</FileType>
+      <Command>$(ProjectDir)cdc/bin/NxShaderBuilder.exe $(ProjectDir)%(RelativeDir)%(Filename).nxShader /PC /HASH /Win64</Command>
+      <Outputs>$(ProjectDir)%(RelativeDir)%(Filename).obj;$(ProjectDir)%(RelativeDir)%(Filename).h</Outputs>
+      <Message>NxShaderBuilder.exe %(Filename).nxShader /PC /HASH /Win64</Message>
+    </CustomBuild>
+    <CustomBuild Include="cdc\runtime\cdcRender\pc\Shaders\BlurPS.nxShader">
+      <FileType>Document</FileType>
+      <Command>$(ProjectDir)cdc/bin/NxShaderBuilder.exe $(ProjectDir)%(RelativeDir)%(Filename).nxShader /PC /HASH /Win64</Command>
+      <Outputs>$(ProjectDir)%(RelativeDir)%(Filename).obj;$(ProjectDir)%(RelativeDir)%(Filename).h</Outputs>
+      <Message>NxShaderBuilder.exe %(Filename).nxShader /PC /HASH /Win64</Message>
+    </CustomBuild>
+    <CustomBuild Include="cdc\runtime\cdcRender\pc\Shaders\ImmediatePC.nxShader">
+      <FileType>Document</FileType>
+      <Command>$(ProjectDir)cdc/bin/NxShaderBuilder.exe $(ProjectDir)%(RelativeDir)%(Filename).nxShader /PC /HASH /Win64</Command>
+      <Outputs>$(ProjectDir)%(RelativeDir)%(Filename).obj;$(ProjectDir)%(RelativeDir)%(Filename).h</Outputs>
+      <Message>NxShaderBuilder.exe %(Filename).nxShader /PC /HASH /Win64</Message>
+    </CustomBuild>
+
+    <CustomBuild Include="game\PC\Shaders\Terrain.nxShader">
+      <FileType>Document</FileType>
+      <Command>$(ProjectDir)cdc/bin/NxShaderBuilder.exe $(ProjectDir)%(RelativeDir)%(Filename).nxShader /PC /ASM /LEGACY /Win64</Command>
+      <Outputs>$(ProjectDir)%(RelativeDir)%(Filename).obj;$(ProjectDir)%(RelativeDir)%(Filename).h</Outputs>
+      <Message>NxShaderBuilder.exe %(Filename).nxShader /PC /ASM /LEGACY /Win64</Message>
+    </CustomBuild>
+
+  </ItemGroup>
+</Project>

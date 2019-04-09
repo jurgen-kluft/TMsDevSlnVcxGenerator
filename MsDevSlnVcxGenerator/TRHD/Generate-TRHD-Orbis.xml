@@ -1,0 +1,155 @@
+﻿<Solution Name="TRHD" Path="TRHD-Orbis.sln">
+
+  <Platform>ORBIS</Platform>
+
+  <Configuration>Debug</Configuration>
+  <Configuration>Dev</Configuration>
+  <Configuration>Release</Configuration>
+  <Configuration>Profile</Configuration>
+  <Configuration>QA</Configuration>
+  <Configuration>Final</Configuration>
+
+  <Project Name="Shaders" Path="TRHD-Orbis-Shaders.vcxproj">
+    <Configuration>Debug=Release</Configuration>
+    <Configuration>Dev=Release</Configuration>
+    <Configuration>Release=Release</Configuration>
+    <Configuration>Profile=Release</Configuration>
+    <Configuration>QA=Release</Configuration>
+    <Configuration>Final=Release</Configuration>
+    <Settings>MsDevProject-Merge-Settings.xml</Settings>
+    <Load>MsDevProject-Default.xml</Load>
+    <Merge>MsDevProject-Type-StaticLibrary.xml</Merge>
+    <Merge>MsDevProject-ProjectConfigs.xml</Merge>
+    <Merge>MsDevProject-CompileSettings.xml</Merge>
+    <Merge>MsDevProject-LinkSettings.xml</Merge>
+    <Merge>MsDevProject-TR2-NxShaders-Project.xml</Merge>
+    <Merge>MsDevProject-TR2-NxShaders-Project-Orbis.xml</Merge>
+    <Merge>MsDevProject-SDK-Orbis.xml</Merge>
+    <Reference>MsDevProject-Reference.xml</Reference>
+    <Package>MsDevProject-TR2-NXShaders-Package.xml</Package>
+  </Project>
+
+  <Project Name="Talea" Path="TRHD-Orbis-Talea.vcxproj">
+    <Settings>MsDevProject-Merge-Settings.xml</Settings>
+    <Load>MsDevProject-Default.xml</Load>
+    <Merge>MsDevProject-Type-StaticLibrary.xml</Merge>
+    <Merge>MsDevProject-ProjectConfigs.xml</Merge>
+    <Merge>MsDevProject-CompileSettings.xml</Merge>
+    <Merge>MsDevProject-LinkSettings.xml</Merge>
+    <Merge>MsDevProject-SDK-Orbis.xml</Merge>
+    <Merge>MsDevProject-TR2-CDC-Package.xml</Merge>
+    <Merge>MsDevProject-3rdparty-Talea-Project.xml</Merge>
+    <Reference>MsDevProject-Reference.xml</Reference>
+    <Package>MsDevProject-3rdparty-Talea-Package.xml</Package>
+    <Package>MsDevProject-TR2-CDC-Package.xml</Package>
+  </Project>
+
+  <Project Name="OnlineSuite" Path="TRHD-Orbis-OnlineSuite.vcxproj">
+    <Settings>MsDevProject-Merge-Settings.xml</Settings>
+    <Load>MsDevProject-Default.xml</Load>
+    <Merge>MsDevProject-Type-StaticLibrary.xml</Merge>
+    <Merge>MsDevProject-ProjectConfigs.xml</Merge>
+    <Merge>MsDevProject-CompileSettings.xml</Merge>
+    <Merge>MsDevProject-LinkSettings.xml</Merge>
+    <Merge>MsDevProject-SDK-Orbis.xml</Merge>
+    <Merge>MsDevProject-3rdparty-OnlineSuite-v5.1.37-Project.xml</Merge>
+    <Merge>MsDevProject-3rdparty-Steam-Package.xml</Merge>
+    <Reference>MsDevProject-Reference.xml</Reference>
+    <Package>MsDevProject-3rdparty-OnlineSuite-v5.1.37-Package.xml</Package>
+    <Package>MsDevProject-3rdparty-Steam-Package.xml</Package>
+  </Project>
+
+  <Project Name="CDC" Path="TRHD-Orbis-CDC.vcxproj">
+    <Settings>MsDevProject-Merge-Settings.xml</Settings>
+    <Load>MsDevProject-Default.xml</Load>
+    <Merge>MsDevProject-Type-StaticLibrary.xml</Merge>
+    <Merge>MsDevProject-ProjectConfigs.xml</Merge>
+    <Merge>MsDevProject-CompileSettings.xml</Merge>
+    <Merge>MsDevProject-LinkSettings.xml</Merge>
+    <Merge>MsDevProject-SDK-Orbis.xml</Merge>
+    <Merge>MsDevProject-TR2-CDC-Project.xml</Merge>
+    <Merge>MsDevProject-3rdparty-FMOD-Package.xml</Merge>
+    <Merge>MsDevProject-3rdparty-Raknet-Library.xml</Merge>
+    <Merge>MsDevProject-3rdparty-Scaleform-Package.xml</Merge>
+    <Reference>MsDevProject-Reference.xml</Reference>
+    <Package>MsDevProject-TR2-CDC-Package.xml</Package>
+    <Package>MsDevProject-3rdparty-Bink-Package.xml</Package>
+    <Package>MsDevProject-3rdparty-FMOD-Package.xml</Package>
+    <Package>MsDevProject-3rdparty-Raknet-Package.xml</Package>
+    <Package>MsDevProject-3rdparty-Scaleform-Package.xml</Package>
+    <Dependency>DTP</Dependency>
+    <Dependency>Script</Dependency>
+    <Dependency>Shaders</Dependency>
+    <Dependency>OnlineSuite</Dependency>
+  </Project>
+
+  <Project Name="TRAE" Path="TRAE\TRHD-Orbis-TRAE.vcxproj">
+    <Settings>MsDevProject-Merge-Settings.xml</Settings>
+    <Load>MsDevProject-TRAE-Default.xml</Load>
+    <Merge>MsDevProject-Type-StaticLibrary.xml</Merge>
+    <Merge>MsDevProject-ProjectConfigs.xml</Merge>
+    <Merge>MsDevProject-TRAE-CompileSettings.xml</Merge>
+    <Merge>MsDevProject-SDK-Orbis.xml</Merge>
+    <Merge>MsDevProject-TRAE-Orbis.xml</Merge>
+    <Merge>MsDevProject-TRAE-Source-Library.xml</Merge>
+    <Reference>MsDevProject-Reference.xml</Reference>
+  </Project>
+
+  <Project Name="DTP" Path="TRHD-Orbis-DTP.vcxproj">
+    <Configuration>Debug=Release</Configuration>
+    <Configuration>Dev=Release</Configuration>
+    <Configuration>Release=Release</Configuration>
+    <Configuration>Profile=Release</Configuration>
+    <Configuration>QA=Release</Configuration>
+    <Configuration>Final=Release</Configuration>
+    <Settings>MsDevProject-Merge-Settings.xml</Settings>
+    <Load>MsDevProject-Default.xml</Load>
+    <Merge>MsDevProject-Type-StaticLibrary.xml</Merge>
+    <Merge>MsDevProject-ProjectConfigs.xml</Merge>
+    <Merge>MsDevProject-CompileSettings.xml</Merge>
+    <Merge>MsDevProject-LinkSettings.xml</Merge>
+    <Merge>MsDevProject-TR2-DTP-Project.xml</Merge>
+    <Merge>MsDevProject-SDK-Orbis.xml</Merge>
+    <Reference>MsDevProject-Reference.xml</Reference>
+    <Package>MsDevProject-TR2-DTP-Package.xml</Package>
+  </Project>
+
+  <Project Name="Script" Path="TRHD-Orbis-Script.vcxproj">
+    <Settings>MsDevProject-Merge-Settings.xml</Settings>
+    <Load>MsDevProject-Default.xml</Load>
+    <Merge>MsDevProject-Type-StaticLibrary.xml</Merge>
+    <Merge>MsDevProject-ProjectConfigs.xml</Merge>
+    <Merge>MsDevProject-CompileSettings.xml</Merge>
+    <Merge>MsDevProject-LinkSettings.xml</Merge>
+    <Merge>MsDevProject-TR2-CDC-Package.xml</Merge>
+    <Merge>MsDevProject-TR2-Script-Project.xml</Merge>
+    <Merge>MsDevProject-SDK-Orbis.xml</Merge>
+    <Merge>MsDevProject-3rdparty-FMOD-Package.xml</Merge>
+    <Merge>MsDevProject-3rdparty-Scaleform-Package.xml</Merge>
+    <Merge>MsDevProject-3rdparty-Raknet-Package.xml</Merge>
+    <Reference>MsDevProject-Reference.xml</Reference>
+    <Package>MsDevProject-TR2-Script-Package.xml</Package>
+    <Package>MsDevProject-TR2-CDC-Package.xml</Package>
+    <Dependency>DTP</Dependency>
+    <Dependency>OnlineSuite</Dependency>
+  </Project>
+
+  <Project Name="TRHD" Path="TRHD-Orbis.vcxproj">
+    <Settings>MsDevProject-Merge-Settings.xml</Settings>
+    <Load>MsDevProject-Default.xml</Load>
+    <Merge>MsDevProject-Type-Application.xml</Merge>
+    <Merge>MsDevProject-ProjectConfigs.xml</Merge>
+    <Merge>MsDevProject-CompileSettings.xml</Merge>
+    <Merge>MsDevProject-LinkSettings.xml</Merge>
+    <Merge>MsDevProject-SDK-Orbis.xml</Merge>
+    <Merge>MsDevProject-TRHD-Game.xml</Merge>
+    <Dependency>TRAE</Dependency>
+    <Dependency>CDC</Dependency>
+    <Dependency>OnlineSuite</Dependency>
+    <Dependency>Talea</Dependency>
+    <Dependency>DTP</Dependency>
+    <Dependency>Shaders</Dependency>
+    <Dependency>Script</Dependency>
+  </Project>
+
+</Solution>

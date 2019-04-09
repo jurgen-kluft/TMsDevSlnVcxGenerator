@@ -1,0 +1,11 @@
+﻿<Project>
+  <ItemGroup Label="ProjectReferences">
+    <ProjectReference Include="${PROJECT_PATH}">
+      <Project>${PROJECT_GUID}</Project>
+      <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
+      <CopyLocalSatteliteAssemblies>false</CopyLocalSatteliteAssemblies>
+      <UseLibraryDependencyInputs>false</UseLibraryDependencyInputs>
+      <LinkLibraryDependecies>true</LinkLibraryDependecies>
+    </ProjectReference>
+  </ItemGroup>
+</Project>

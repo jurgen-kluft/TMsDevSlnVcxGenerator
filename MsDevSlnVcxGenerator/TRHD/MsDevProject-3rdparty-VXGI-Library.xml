@@ -1,0 +1,8 @@
+﻿<Project>
+  <ItemGroup Label="Source">
+    <ClCompile Include="SCAN->$(SolutionDir)cdc\3rdparty\VXGI\include\**\*.cpp" />
+  </ItemGroup>
+
+  <Include>MsDevProject-3rdparty-VXGI-Package.xml</Include>
+
+</Project>

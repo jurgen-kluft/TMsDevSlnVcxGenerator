@@ -1,0 +1,9 @@
+﻿<Project>
+  <ItemDefinitionGroup Condition="*">
+    <ClCompile>
+      <AdditionalIncludeDirectories>GeneratedData\DTP\$(Platform)Release\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>GeneratedData\DTP\$(Platform)Release\cdc\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>GeneratedData\DTP\$(Platform)Release\code\</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+</Project>
