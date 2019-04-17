@@ -1,0 +1,9 @@
+﻿<Project>
+
+  <ItemDefinitionGroup Condition="*">
+    <ClCompile>
+      <PreprocessorDefinitions>TRHD</PreprocessorDefinitions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+
+</Project>

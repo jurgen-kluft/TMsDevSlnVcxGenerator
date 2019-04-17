@@ -68,11 +68,13 @@
     <Merge>MsDevProject-LinkSettings.xml</Merge>
     <Merge>MsDevProject-SDK-Orbis.xml</Merge>
     <Merge>MsDevProject-TR2-CDC-Project.xml</Merge>
+    <Merge>MsDevProject-TR2-CDC-TRHD.xml</Merge>
     <Merge>MsDevProject-3rdparty-FMOD-Package.xml</Merge>
     <Merge>MsDevProject-3rdparty-Raknet-Library.xml</Merge>
     <Merge>MsDevProject-3rdparty-Scaleform-Package.xml</Merge>
     <Reference>MsDevProject-Reference.xml</Reference>
     <Package>MsDevProject-TR2-CDC-Package.xml</Package>
+    <Package>MsDevProject-TR2-CDC-TRHD.xml</Package>
     <Package>MsDevProject-3rdparty-Bink-Package.xml</Package>
     <Package>MsDevProject-3rdparty-FMOD-Package.xml</Package>
     <Package>MsDevProject-3rdparty-Raknet-Package.xml</Package>
@@ -89,9 +91,9 @@
     <Merge>MsDevProject-Type-StaticLibrary.xml</Merge>
     <Merge>MsDevProject-ProjectConfigs.xml</Merge>
     <Merge>MsDevProject-TRAE-CompileSettings.xml</Merge>
-    <Merge>MsDevProject-SDK-Orbis.xml</Merge>
-    <Merge>MsDevProject-TRAE-Orbis.xml</Merge>
     <Merge>MsDevProject-TRAE-Source-Library.xml</Merge>
+    <Merge>MsDevProject-TRAE-Orbis.xml</Merge>
+    <Merge>MsDevProject-SDK-Orbis.xml</Merge>
     <Reference>MsDevProject-Reference.xml</Reference>
   </Project>
 
@@ -122,6 +124,7 @@
     <Merge>MsDevProject-CompileSettings.xml</Merge>
     <Merge>MsDevProject-LinkSettings.xml</Merge>
     <Merge>MsDevProject-TR2-CDC-Package.xml</Merge>
+    <Merge>MsDevProject-TR2-CDC-TRHD.xml</Merge>
     <Merge>MsDevProject-TR2-Script-Project.xml</Merge>
     <Merge>MsDevProject-SDK-Orbis.xml</Merge>
     <Merge>MsDevProject-3rdparty-FMOD-Package.xml</Merge>

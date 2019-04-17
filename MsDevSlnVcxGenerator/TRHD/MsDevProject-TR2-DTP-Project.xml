@@ -12,6 +12,13 @@
     <IntDir>GeneratedData\DTP\$(Platform)$(Configuration).temp\</IntDir>
   </PropertyGroup>
   <ItemGroup Label="Source">
+    <ClCompile Create="GeneratedData\DTP\dtp.cpp">
+const char* GetDtpVersion()
+{
+  static const char* gDtpVersion = "DTP";
+  return gDtpVersion;
+}
+    </ClCompile>
     <DtpCompile Include="SCAN->cdc\dtp\**\*.{dtp,dtpinc}">
       <Build>true</Build>
     </DtpCompile>

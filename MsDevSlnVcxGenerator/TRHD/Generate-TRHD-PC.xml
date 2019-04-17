@@ -43,6 +43,83 @@
     <Package>MsDevProject-TR2-NXShaders-Package.xml</Package>
   </Project>
 
+  <Project Name="Talea" Path="TRHD-PC-Talea.vcxproj">
+    <Settings>MsDevProject-Merge-Settings.xml</Settings>
+    <Load>MsDevProject-Default.xml</Load>
+    <Merge>MsDevProject-Type-StaticLibrary.xml</Merge>
+    <Merge>MsDevProject-ProjectConfigs.xml</Merge>
+    <Merge>MsDevProject-CompileSettings.xml</Merge>
+    <Merge>MsDevProject-LinkSettings.xml</Merge>
+    <Merge>MsDevProject-SDK-x64.xml</Merge>
+    <Merge>MsDevProject-TR2-CDC-Package.xml</Merge>
+    <Merge>MsDevProject-3rdparty-Talea-Project.xml</Merge>
+    <Reference>MsDevProject-Reference.xml</Reference>
+    <Package>MsDevProject-3rdparty-Talea-Package.xml</Package>
+    <Package>MsDevProject-TR2-CDC-Package.xml</Package>
+  </Project>
+
+  <Project Name="OnlineSuite" Path="TRHD-PC-OnlineSuite.vcxproj">
+    <Settings>MsDevProject-Merge-Settings.xml</Settings>
+    <Load>MsDevProject-Default.xml</Load>
+    <Merge>MsDevProject-Type-StaticLibrary.xml</Merge>
+    <Merge>MsDevProject-ProjectConfigs.xml</Merge>
+    <Merge>MsDevProject-CompileSettings.xml</Merge>
+    <Merge>MsDevProject-LinkSettings.xml</Merge>
+    <Merge>MsDevProject-SDK-x64.xml</Merge>
+    <Merge>MsDevProject-3rdparty-OnlineSuite-v5.1.34-Project.xml</Merge>
+    <Merge>MsDevProject-3rdparty-Steam-Package.xml</Merge>
+    <Reference>MsDevProject-Reference.xml</Reference>
+    <Package>MsDevProject-3rdparty-OnlineSuite-v5.1.34-Package.xml</Package>
+    <Package>MsDevProject-3rdparty-Steam-Package.xml</Package>
+  </Project>
+
+  <Project Name="CDC" Path="TRHD-PC-CDC.vcxproj">
+    <Settings>MsDevProject-Merge-Settings.xml</Settings>
+    <Load>MsDevProject-Default.xml</Load>
+    <Merge>MsDevProject-Type-StaticLibrary.xml</Merge>
+    <Merge>MsDevProject-ProjectConfigs.xml</Merge>
+    <Merge>MsDevProject-CompileSettings.xml</Merge>
+    <Merge>MsDevProject-LinkSettings.xml</Merge>
+    <Merge>MsDevProject-SDK-x64.xml</Merge>
+    <Merge>MsDevProject-TR2-CDC-Project.xml</Merge>
+    <Merge>MsDevProject-TR2-CDC-TRHD.xml</Merge>
+    <Merge>MsDevProject-3rdparty-ATIAGS-Package.xml</Merge>
+    <Merge>MsDevProject-3rdparty-Bink-Package.xml</Merge>
+    <Merge>MsDevProject-3rdparty-FMOD-Package.xml</Merge>
+    <Merge>MsDevProject-3rdparty-NvApi-Package.xml</Merge>
+    <Merge>MsDevProject-3rdparty-PureHair-Package.xml</Merge>
+    <Merge>MsDevProject-3rdparty-Raknet-Library.xml</Merge>
+    <Merge>MsDevProject-3rdparty-Scaleform-Package.xml</Merge>
+    <Merge>MsDevProject-3rdparty-VXGI-Library.xml</Merge>
+    <Reference>MsDevProject-Reference.xml</Reference>
+    <Package>MsDevProject-TR2-CDC-Package.xml</Package>
+    <Package>MsDevProject-TR2-CDC-TRHD.xml</Package>
+    <Package>MsDevProject-3rdparty-ATIAGS-Package.xml</Package>
+    <Package>MsDevProject-3rdparty-Bink-Package.xml</Package>
+    <Package>MsDevProject-3rdparty-FMOD-Package.xml</Package>
+    <Package>MsDevProject-3rdparty-NvApi-Package.xml</Package>
+    <Package>MsDevProject-3rdparty-Raknet-Package.xml</Package>
+    <Package>MsDevProject-3rdparty-PureHair-Package.xml</Package>
+    <Package>MsDevProject-3rdparty-Scaleform-Package.xml</Package>
+    <Package>MsDevProject-3rdparty-VXGI-Package.xml</Package>
+    <Dependency>DTP</Dependency>
+    <Dependency>Script</Dependency>
+    <Dependency>Shaders</Dependency>
+    <Dependency>OnlineSuite</Dependency>
+  </Project>
+
+  <Project Name="TRAE" Path="TRAE\TRHD-PC-TRAE.vcxproj">
+    <Settings>MsDevProject-Merge-Settings.xml</Settings>
+    <Load>MsDevProject-TRAE-Default.xml</Load>
+    <Merge>MsDevProject-Type-StaticLibrary.xml</Merge>
+    <Merge>MsDevProject-ProjectConfigs.xml</Merge>
+    <Merge>MsDevProject-TRAE-CompileSettings.xml</Merge>
+    <Merge>MsDevProject-TRAE-Source-Library.xml</Merge>
+    <Merge>MsDevProject-TRAE-x64.xml</Merge>
+    <Merge>MsDevProject-SDK-x64.xml</Merge>
+    <Reference>MsDevProject-Reference.xml</Reference>
+  </Project>
+
   <Project Name="DTP" Path="TRHD-PC-DTP.vcxproj">
     <Configuration>Debug=Release</Configuration>
     <Configuration>Dev=Release</Configuration>
@@ -70,6 +147,7 @@
     <Merge>MsDevProject-CompileSettings.xml</Merge>
     <Merge>MsDevProject-LinkSettings.xml</Merge>
     <Merge>MsDevProject-TR2-CDC-Package.xml</Merge>
+    <Merge>MsDevProject-TR2-CDC-TRHD.xml</Merge>
     <Merge>MsDevProject-TR2-Script-Project.xml</Merge>
     <Merge>MsDevProject-SDK-x64.xml</Merge>
     <Merge>MsDevProject-3rdparty-FMOD-Package.xml</Merge>
@@ -81,81 +159,6 @@
     <Package>MsDevProject-TR2-CDC-Package.xml</Package>
     <Dependency>DTP</Dependency>
     <Dependency>OnlineSuite</Dependency>
-  </Project>
-
-  <Project Name="OnlineSuite" Path="TRHD-PC-OnlineSuite.vcxproj">
-    <Settings>MsDevProject-Merge-Settings.xml</Settings>
-    <Load>MsDevProject-Default.xml</Load>
-    <Merge>MsDevProject-Type-StaticLibrary.xml</Merge>
-    <Merge>MsDevProject-ProjectConfigs.xml</Merge>
-    <Merge>MsDevProject-CompileSettings.xml</Merge>
-    <Merge>MsDevProject-LinkSettings.xml</Merge>
-    <Merge>MsDevProject-SDK-x64.xml</Merge>
-    <Merge>MsDevProject-3rdparty-OnlineSuite-v5.1.34-Project.xml</Merge>
-    <Merge>MsDevProject-3rdparty-Steam-Package.xml</Merge>
-    <Reference>MsDevProject-Reference.xml</Reference>
-    <Package>MsDevProject-3rdparty-OnlineSuite-v5.1.34-Package.xml</Package>
-    <Package>MsDevProject-3rdparty-Steam-Package.xml</Package>
-  </Project>
-
-  <Project Name="CDC" Path="TRHD-PC-CDC.vcxproj">
-    <Settings>MsDevProject-Merge-Settings.xml</Settings>
-    <Load>MsDevProject-Default.xml</Load>
-    <Merge>MsDevProject-Type-StaticLibrary.xml</Merge>
-    <Merge>MsDevProject-ProjectConfigs.xml</Merge>
-    <Merge>MsDevProject-CompileSettings.xml</Merge>
-    <Merge>MsDevProject-LinkSettings.xml</Merge>
-    <Merge>MsDevProject-SDK-x64.xml</Merge>
-    <Merge>MsDevProject-TR2-CDC-Project.xml</Merge>
-    <Merge>MsDevProject-3rdparty-ATIAGS-Package.xml</Merge>
-    <Merge>MsDevProject-3rdparty-Bink-Package.xml</Merge>
-    <Merge>MsDevProject-3rdparty-FMOD-Package.xml</Merge>
-    <Merge>MsDevProject-3rdparty-NvApi-Package.xml</Merge>
-    <Merge>MsDevProject-3rdparty-PureHair-Package.xml</Merge>
-    <Merge>MsDevProject-3rdparty-Raknet-Library.xml</Merge>
-    <Merge>MsDevProject-3rdparty-Scaleform-Package.xml</Merge>
-    <Merge>MsDevProject-3rdparty-VXGI-Library.xml</Merge>
-    <Reference>MsDevProject-Reference.xml</Reference>
-    <Package>MsDevProject-TR2-CDC-Package.xml</Package>
-    <Package>MsDevProject-3rdparty-ATIAGS-Package.xml</Package>
-    <Package>MsDevProject-3rdparty-Bink-Package.xml</Package>
-    <Package>MsDevProject-3rdparty-FMOD-Package.xml</Package>
-    <Package>MsDevProject-3rdparty-NvApi-Package.xml</Package>
-    <Package>MsDevProject-3rdparty-Raknet-Package.xml</Package>
-    <Package>MsDevProject-3rdparty-PureHair-Package.xml</Package>
-    <Package>MsDevProject-3rdparty-Scaleform-Package.xml</Package>
-    <Package>MsDevProject-3rdparty-VXGI-Package.xml</Package>
-    <Dependency>DTP</Dependency>
-    <Dependency>Script</Dependency>
-    <Dependency>Shaders</Dependency>
-    <Dependency>OnlineSuite</Dependency>
-  </Project>
-
-  <Project Name="TRAE" Path="TRAE\TRHD-PC-TRAE.vcxproj">
-    <Settings>MsDevProject-Merge-Settings.xml</Settings>
-    <Load>MsDevProject-TRAE-Default.xml</Load>
-    <Merge>MsDevProject-Type-StaticLibrary.xml</Merge>
-    <Merge>MsDevProject-ProjectConfigs.xml</Merge>
-    <Merge>MsDevProject-TRAE-CompileSettings.xml</Merge>
-    <Merge>MsDevProject-TRAE-Source-Library.xml</Merge>
-    <Merge>MsDevProject-TRAE-x64.xml</Merge>
-    <Merge>MsDevProject-SDK-x64.xml</Merge>
-    <Reference>MsDevProject-Reference.xml</Reference>
-  </Project>
-
-  <Project Name="Talea" Path="TRHD-PC-Talea.vcxproj">
-    <Settings>MsDevProject-Merge-Settings.xml</Settings>
-    <Load>MsDevProject-Default.xml</Load>
-    <Merge>MsDevProject-Type-StaticLibrary.xml</Merge>
-    <Merge>MsDevProject-ProjectConfigs.xml</Merge>
-    <Merge>MsDevProject-CompileSettings.xml</Merge>
-    <Merge>MsDevProject-LinkSettings.xml</Merge>
-    <Merge>MsDevProject-SDK-x64.xml</Merge>
-    <Merge>MsDevProject-TR2-CDC-Package.xml</Merge>
-    <Merge>MsDevProject-3rdparty-Talea-Project.xml</Merge>
-    <Reference>MsDevProject-Reference.xml</Reference>
-    <Package>MsDevProject-3rdparty-Talea-Package.xml</Package>
-    <Package>MsDevProject-TR2-CDC-Package.xml</Package>
   </Project>
 
   <Project Name="TRHD" Path="TRHD-PC.vcxproj">

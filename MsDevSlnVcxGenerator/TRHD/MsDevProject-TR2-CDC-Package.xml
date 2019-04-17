@@ -8,10 +8,11 @@
       <AdditionalIncludeDirectories>$(SolutionDir)cdc\runtime</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>CDC_GAME_NAME=tr2</PreprocessorDefinitions>
       <PreprocessorDefinitions>CDC_USE_SYSTEM_PLACEMENT_NEW=1</PreprocessorDefinitions>
-      <PreprocessorDefinitions>DISABLE_ONLINE_FEATURES</PreprocessorDefinitions>
       <PreprocessorDefinitions>ENABLE_NETZ=0</PreprocessorDefinitions>
       <PreprocessorDefinitions>GAME_TR8=1</PreprocessorDefinitions>
       <PreprocessorDefinitions>PLANNERINTERFACE_USE_VOLUMETRIC_PLANNER</PreprocessorDefinitions>
+      <PreprocessorDefinitions>USE_BIGFILE</PreprocessorDefinitions>
+      <PreprocessorDefinitions>PLATFORM_64BIT</PreprocessorDefinitions>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='*|x64'">
@@ -72,9 +73,13 @@
     </ClCompile>
   </ItemDefinitionGroup>
 
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='{Debug,Dev,Release,Profile}|*'">
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|*'">
     <ClCompile>
       <PreprocessorDefinitions>DBG_BUILD</PreprocessorDefinitions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='{Debug,Dev,Release,Profile}|*'">
+    <ClCompile>
       <PreprocessorDefinitions>G2_ASSERT</PreprocessorDefinitions>
       <PreprocessorDefinitions>G2_ASSERT_DBG</PreprocessorDefinitions>
       <PreprocessorDefinitions>G2_EXCEPT</PreprocessorDefinitions>
@@ -84,7 +89,7 @@
       <PreprocessorDefinitions>G2_PRINT</PreprocessorDefinitions>
     </ClCompile>
   </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='{Debug,Dev}|*'">
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='{Debug,Dev,Release}|*'">
     <ClCompile>
       <PreprocessorDefinitions>BFX_BUILD_ASSERT</PreprocessorDefinitions>
       <PreprocessorDefinitions>CDC_BUILD_DEBUG_TIMING</PreprocessorDefinitions>
@@ -112,7 +117,6 @@
       <PreprocessorDefinitions>OPT_BUILD</PreprocessorDefinitions>
       <PreprocessorDefinitions>PROFILE</PreprocessorDefinitions>
       <PreprocessorDefinitions>REAVERGUI</PreprocessorDefinitions>
-      <PreprocessorDefinitions>USE_BIGFILE</PreprocessorDefinitions>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='QA|*'">
@@ -124,7 +128,6 @@
     <ClCompile>
       <PreprocessorDefinitions>FIN_BUILD</PreprocessorDefinitions>
       <PreprocessorDefinitions>GM_BUILD</PreprocessorDefinitions>
-      <PreprocessorDefinitions>USE_BIGFILE</PreprocessorDefinitions>
     </ClCompile>
   </ItemDefinitionGroup>
 </Project>

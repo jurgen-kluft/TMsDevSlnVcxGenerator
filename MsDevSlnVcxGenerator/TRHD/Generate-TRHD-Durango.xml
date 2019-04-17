@@ -57,6 +57,7 @@
     <Merge>MsDevProject-LinkSettings.xml</Merge>
     <Merge>MsDevProject-TR2-CDC-Package.xml</Merge>
     <Merge>MsDevProject-TR2-Script-Project.xml</Merge>
+    <Merge>MsDevProject-TR2-CDC-TRHD.xml</Merge>
     <Merge>MsDevProject-SDK-Durango.xml</Merge>
     <Merge>MsDevProject-SDK-Durango-Xbox.Services.xml</Merge>
     <Merge>MsDevProject-3rdparty-FMOD-Package.xml</Merge>
@@ -96,6 +97,7 @@
     <Merge>MsDevProject-SDK-Durango.xml</Merge>
     <Merge>MsDevProject-SDK-Durango-Xbox.Services.xml</Merge>
     <Merge>MsDevProject-TR2-CDC-Project.xml</Merge>
+    <Merge>MsDevProject-TR2-CDC-TRHD.xml</Merge>
     <Merge>MsDevProject-3rdparty-ATIAGS-Package.xml</Merge>
     <Merge>MsDevProject-3rdparty-Bink-Package.xml</Merge>
     <Merge>MsDevProject-3rdparty-FMOD-Package.xml</Merge>
@@ -106,6 +108,7 @@
     <Merge>MsDevProject-3rdparty-VXGI-Library.xml</Merge>
     <Reference>MsDevProject-Reference.xml</Reference>
     <Package>MsDevProject-TR2-CDC-Package.xml</Package>
+    <Package>MsDevProject-TR2-CDC-TRHD.xml</Package>
     <Package>MsDevProject-3rdparty-ATIAGS-Package.xml</Package>
     <Package>MsDevProject-3rdparty-Bink-Package.xml</Package>
     <Package>MsDevProject-3rdparty-FMOD-Package.xml</Package>

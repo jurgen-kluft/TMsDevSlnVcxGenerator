@@ -9,7 +9,7 @@ namespace MsDevSlnVcxGenerator
 		static void Main(string[] args)
 		{
 			MsDevSolution sln = new MsDevSolution(@"F:\TR2\tr2_dev\");
-			sln.Load("Generate-TRHD-Durango.xml");
+			sln.Load("Generate-TRHD-Orbis.xml");
 			sln.Save();
 		}
 	}

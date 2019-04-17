@@ -71,8 +71,6 @@
       <AdditionalIncludeDirectories>$(SolutionDir)code\game\</AdditionalIncludeDirectories>
       <AdditionalIncludeDirectories>$(SolutionDir)cdc\runtime\</AdditionalIncludeDirectories>
       <AdditionalIncludeDirectories>$(SolutionDir)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>PLATFORM_64BIT</PreprocessorDefinitions>
-      <PreprocessorDefinitions>TRHD</PreprocessorDefinitions>
       <TreatWarningAsError>false</TreatWarningAsError>
     </ClCompile>
   </ItemDefinitionGroup>

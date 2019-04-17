@@ -108,7 +108,16 @@ namespace MsDevSlnVcxGenerator
             return namevalues;
         }
 
-        public static List<string> GlobFiles(string pathglob)
+		private static string FullPathToRelative(string filepath, int dirlen)
+		{
+			if (dirlen < filepath.Length)
+			{
+				return filepath.Substring(dirlen);
+			}
+			return filepath;
+		}
+
+		public static List<string> GlobFiles(string pathglob)
         {
             List<string> globbed = new List<string>();
 
@@ -120,7 +129,7 @@ namespace MsDevSlnVcxGenerator
 			if (dirpathglobpos >= 0 || filenameglobpos >= 0)
 			{
 				string basepath = string.Empty;
-				string glob = string.Empty;
+				string globpattern = string.Empty;
 
 				if (dirpathglobpos >= 0)
 				{
@@ -132,12 +141,12 @@ namespace MsDevSlnVcxGenerator
 					{
 						dirpathglobpos += 1;
 					}
-					glob = pathglob.Substring(dirpathglobpos);
+					globpattern = pathglob.Substring(dirpathglobpos);
 				}
 				else
 				{
 					basepath = dirpath;
-					glob = filename;
+					globpattern = filename;
 				}
 
 				if (!basepath.EndsWith("\\"))
@@ -146,9 +155,44 @@ namespace MsDevSlnVcxGenerator
 				DirectoryInfo basedir = new DirectoryInfo(basepath);
 				if (basedir.Exists)
 				{
-					foreach (FileInfo fi in basedir.GlobFiles(glob))
+					var glob = new CachingGlob(globpattern);
+					var truncateLength = basedir.FullName.Length;
+
+					Stack<DirectoryInfo> dirs = new Stack<DirectoryInfo>();
+					Stack<int> states = new Stack<int>();
+					dirs.Push(basedir);
+					states.Push(0);
+					while (dirs.Count > 0)
 					{
-						globbed.Add(fi.FullName);
+						DirectoryInfo dir = dirs.Pop();
+						int state = states.Pop();
+
+						if (state == 0)
+						{
+							dirs.Push(dir);
+							states.Push(1);
+
+							DirectoryInfo[] subdirs = dir.GetDirectories();
+							if (subdirs.Length > 0)
+							{
+								for (int i=subdirs.Length -1; i >= 0; --i)
+								{
+									dirs.Push(subdirs[i]);
+									states.Push(0);
+								}
+							}
+						}
+						else
+						{
+							FileInfo[] files = dir.GetFiles();
+							foreach (FileInfo fi in files)
+							{
+								if (glob.IsMatch(FullPathToRelative(fi.FullName, truncateLength)))
+								{
+									globbed.Add(fi.FullName);
+								}
+							}
+						}
 					}
 				}
 			}
