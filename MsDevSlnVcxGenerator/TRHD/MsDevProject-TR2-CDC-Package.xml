@@ -80,8 +80,6 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='{Debug,Dev,Release,Profile}|*'">
     <ClCompile>
-      <PreprocessorDefinitions>G2_ASSERT</PreprocessorDefinitions>
-      <PreprocessorDefinitions>G2_ASSERT_DBG</PreprocessorDefinitions>
       <PreprocessorDefinitions>G2_EXCEPT</PreprocessorDefinitions>
       <PreprocessorDefinitions>G2_DEBUGDRAW</PreprocessorDefinitions>
       <PreprocessorDefinitions>G2_DEBUGLINES</PreprocessorDefinitions>
@@ -91,6 +89,8 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='{Debug,Dev,Release}|*'">
     <ClCompile>
+      <PreprocessorDefinitions>G2_ASSERT</PreprocessorDefinitions>
+      <PreprocessorDefinitions>G2_ASSERT_DBG</PreprocessorDefinitions>
       <PreprocessorDefinitions>BFX_BUILD_ASSERT</PreprocessorDefinitions>
       <PreprocessorDefinitions>CDC_BUILD_DEBUG_TIMING</PreprocessorDefinitions>
       <PreprocessorDefinitions>DEBUG_ENABLE_PROFILE</PreprocessorDefinitions>
@@ -107,7 +107,6 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Profile|*'">
     <ClCompile>
-      <PreprocessorDefinitions>BFX_BUILD_ASSERT</PreprocessorDefinitions>
       <PreprocessorDefinitions>CDC_BUILD_DEBUG_TIMING</PreprocessorDefinitions>
       <PreprocessorDefinitions>CDC_PIX_TIMING_CAP</PreprocessorDefinitions>
       <PreprocessorDefinitions>D3D_DEBUG_INFO</PreprocessorDefinitions>
